@@ -3,9 +3,9 @@ package com.example.yinkanupp
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Text
-import androidx.compose.material.TextFieldDefaults
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.paint
@@ -76,6 +76,16 @@ fun Formulario(navController: NavHostController){
                     focusedBorderColor = Color.Magenta,
                     unfocusedBorderColor = Color.Blue
                 )
+            )
+            ExtendedFloatingActionButton(
+                onClick = { navController.navigate("pantalla2") },
+                icon = {
+                    Icon(
+                        Icons.Filled.Favorite,
+                        contentDescription = "Favorite"
+                    )
+                },
+                text = { Text("Cambiar") }
             )
         }
     }
