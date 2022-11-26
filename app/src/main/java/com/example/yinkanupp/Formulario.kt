@@ -16,8 +16,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 
+//función para lanzar la página de inicio de sesión de usuario
 @Composable
 fun Formulario(navController: NavHostController){
+    //Columna general dentro de la que van a ir los elementos de la vista, la cual define
+    //la imagen de fondo
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -26,56 +29,29 @@ fun Formulario(navController: NavHostController){
                 contentScale = ContentScale.FillWidth
             )){
 
-
+        //Columna para el banner del header
         Column(){
-            val bannerhead = painterResource(R.drawable.logoyinkanupp)
+            val bannerhead = painterResource(R.drawable.logo)
             Image(
                 painter = bannerhead,
                 contentDescription = null,
                 modifier = Modifier
-                    .height(100.dp)
-                    .fillMaxWidth()
+                    .height(90.dp)
+                    .fillMaxWidth(),
 
             )
         }
-
+        //Columna para situar las 3 cajas de texto
         Column(modifier = Modifier.padding(top = 50.dp)) {
 
-            var myText by remember { mutableStateOf("") }
-            OutlinedTextField(
-                value= myText,
-                onValueChange = {myText = it },
-                modifier = Modifier.padding(50.dp,20.dp).background(color = Color.White.copy(alpha = 0.4f)),
-                label = { Text(text = "Nombre", color = Color.Black, fontWeight = FontWeight.Bold) },
-                colors = TextFieldDefaults.outlinedTextFieldColors(
-                    focusedBorderColor = Color.Magenta,
-                    unfocusedBorderColor = Color.Blue
-                )
-            )
+            //llamamos 3 veces a la función RellenarDatosUsuario para pintar en pantalla
+            //los 3 MyText donde introducir los textos
+            RellenarDatosUsuario(text = "Nombre")
+            RellenarDatosUsuario(text = "Apellidos")
+            RellenarDatosUsuario(text = "Curso")
 
-            var myText2 by remember { mutableStateOf("") }
-            OutlinedTextField(
-                value= myText,
-                onValueChange = {myText = it },
-                modifier = Modifier.padding(50.dp,20.dp).background(color = Color.White.copy(alpha = 0.4f)),
-                label = { Text(text = "Apellidos", color = Color.Black, fontWeight = FontWeight.Bold) },
-                colors = TextFieldDefaults.outlinedTextFieldColors(
-                    focusedBorderColor = Color.Magenta,
-                    unfocusedBorderColor = Color.Blue
-                )
-            )
 
-            var myText3 by remember { mutableStateOf("") }
-            OutlinedTextField(
-                value= myText,
-                onValueChange = {myText = it },
-                modifier = Modifier.padding(50.dp,20.dp).background(color = Color.White.copy(alpha = 0.4f)),
-                label = { Text(text = "Curso", color = Color.Black, fontWeight = FontWeight.Bold) },
-                colors = TextFieldDefaults.outlinedTextFieldColors(
-                    focusedBorderColor = Color.Magenta,
-                    unfocusedBorderColor = Color.Blue
-                )
-            )
+
             ExtendedFloatingActionButton(
                 onClick = { navController.navigate("pantalla2") },
                 icon = {
@@ -91,4 +67,22 @@ fun Formulario(navController: NavHostController){
 
 
 
+}
+
+@Composable
+fun RellenarDatosUsuario(text: String){
+
+    var myText by remember { mutableStateOf("") }
+    OutlinedTextField(
+        value= myText,
+        onValueChange = {myText = it },
+        modifier = Modifier
+            .padding(50.dp, 20.dp)
+            .background(color = Color.White.copy(alpha = 0.4f)),
+        label = { Text(text = text, color = Color.Black, fontWeight = FontWeight.Bold) },
+        colors = TextFieldDefaults.outlinedTextFieldColors(
+            focusedBorderColor = Color.Magenta,
+            unfocusedBorderColor = Color.Blue
+        )
+    )
 }

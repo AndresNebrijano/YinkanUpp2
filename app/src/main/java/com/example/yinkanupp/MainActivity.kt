@@ -44,8 +44,8 @@ class MainActivity : ComponentActivity() {
                 val navigationController = rememberNavController()
                 NavHost(navController = navigationController, startDestination = "pantalla1"){
                     composable("pantalla1"){ Formulario(navigationController) }
-                    composable("pantalla2"){ ScafforldScreen((navigationController)) }
-
+                    composable("pantalla2"){ ScafforldScreen(navigationController) }
+                    composable("pantalla3"){ MostrarMenuInicial(navigationController)}
                 }
             }
             }
@@ -123,11 +123,12 @@ fun app(){
     }*/
 
 
-@Preview(showBackground = true)
+ @Preview(showBackground = true)
 @Composable
 fun DefaultPreview(){
     YinkanUppTheme{
-        ScafforldScreen(navController= rememberNavController())
+        Formulario(navController= rememberNavController())
+
     }
 }
 
