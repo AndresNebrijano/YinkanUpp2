@@ -28,14 +28,13 @@ fun Formulario(navController: NavHostController){
 
 
         Column(){
-            val bannerhead = painterResource(R.drawable.banner)
+            val bannerhead = painterResource(R.drawable.logoyinkanupp)
             Image(
                 painter = bannerhead,
                 contentDescription = null,
                 modifier = Modifier
                     .height(100.dp)
                     .fillMaxWidth()
-                    .background(color = Color.Black)
 
             )
         }
