@@ -31,14 +31,13 @@ fun Formulario(navController: NavHostController){
 
         //Columna para el banner del header
         Column(){
-            val bannerhead = painterResource(R.drawable.banner)
+            val bannerhead = painterResource(R.drawable.logo)
             Image(
                 painter = bannerhead,
                 contentDescription = null,
                 modifier = Modifier
-                    .height(100.dp)
-                    .fillMaxWidth()
-                    .background(color = Color.Black)
+                    .height(90.dp)
+                    .fillMaxWidth(),
 
             )
         }
