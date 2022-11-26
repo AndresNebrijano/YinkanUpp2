@@ -127,7 +127,7 @@ fun app(){
 @Composable
 fun DefaultPreview(){
     YinkanUppTheme{
-        MostrarMenuInicial(navController= rememberNavController())
+        Formulario(navController= rememberNavController())
 
     }
 }
