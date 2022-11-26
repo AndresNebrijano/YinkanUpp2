@@ -40,7 +40,11 @@ fun MostrarMenuInicial(navController: NavHostController){
 
             )
         }
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> Miriam
         ColocarBotones(text = "Nueva gymkana", separacion = 110)
         ColocarBotones(text = "Continuar gymkana", separacion = 95)
     }
