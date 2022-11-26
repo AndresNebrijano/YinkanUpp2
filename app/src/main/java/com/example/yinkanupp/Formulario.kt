@@ -46,7 +46,7 @@ fun Formulario(navController: NavHostController){
 
             //llamamos 3 veces a la función RellenarDatosUsuario para pintar en pantalla
             //los 3 MyText donde introducir los textos
-            RellenarDatosUsuario(text = "Nombre")
+            RellenarDatosUsuario(text = "Caca")
             RellenarDatosUsuario(text = "Apellidos")
             RellenarDatosUsuario(text = "Curso")
 
