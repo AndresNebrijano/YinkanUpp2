@@ -2,10 +2,12 @@ package com.example.yinkanupp
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.ExtendedFloatingActionButton
+import androidx.compose.material.Icon
+import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.paint
@@ -38,6 +40,21 @@ fun MostrarMenuInicial(navController: NavHostController){
 
             )
         }
-
+        
+        ColocarBotones(text = "Nueva gymkana", separacion = 110)
+        ColocarBotones(text = "Continuar gymkana", separacion = 95)
     }
+}
+
+@Composable
+fun ColocarBotones(text: String, separacion: Int){
+
+    ExtendedFloatingActionButton(
+        onClick = { },
+        icon = {
+        },
+        text = { Text (text) },
+        modifier = Modifier
+            .padding(top = 200.dp, start = separacion.dp)
+    )
 }
