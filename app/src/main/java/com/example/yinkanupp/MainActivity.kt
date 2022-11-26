@@ -123,7 +123,7 @@ fun app(){
     }*/
 
 
-@Preview(showBackground = true)
+ @Preview(showBackground = true)
 @Composable
 fun DefaultPreview(){
     YinkanUppTheme{
