@@ -54,6 +54,8 @@ fun Formulario(navController: NavHostController){
 
             ExtendedFloatingActionButton(
                 onClick = { navController.navigate("pantalla2") },
+                contentColor = Color.Green,
+                backgroundColor = Color.Blue,
                 icon = {
                     Icon(
                         Icons.Filled.Favorite,
@@ -61,6 +63,7 @@ fun Formulario(navController: NavHostController){
                     )
                 },
                 text = { Text("Cambiar") }
+
             )
         }
     }
