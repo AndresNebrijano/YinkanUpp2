@@ -29,7 +29,7 @@ fun MostrarMenuInicial(navController: NavHostController){
             )){
 
         Column(){
-            val bannerhead = painterResource(R.drawable.banner)
+            val bannerhead = painterResource(R.drawable.logo)
             Image(
                 painter = bannerhead,
                 contentDescription = null,
