@@ -42,10 +42,11 @@ class MainActivity : ComponentActivity() {
                 color = MaterialTheme.colors.background
             ) {
                 val navigationController = rememberNavController()
-                NavHost(navController = navigationController, startDestination = "pantalla1"){
+                NavHost(navController = navigationController, startDestination = "pantalla4"){
                     composable("pantalla1"){ Formulario(navigationController) }
                     composable("pantalla2"){ ScafforldScreen(navigationController) }
                     composable("pantalla3"){ MostrarMenuInicial(navigationController)}
+                    composable("pantalla4"){ Cuestionario(navigationController)}
                 }
             }
             }
@@ -127,7 +128,7 @@ fun app(){
 @Composable
 fun DefaultPreview(){
     YinkanUppTheme{
-        MostrarMenuInicial(navController= rememberNavController())
+        Cuestionario(navController= rememberNavController())
 
     }
 }
