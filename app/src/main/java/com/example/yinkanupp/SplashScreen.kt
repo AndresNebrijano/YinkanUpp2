@@ -15,6 +15,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
+import com.example.yinkanupp.navigation.AppScreens
 import kotlinx.coroutines.delay
 
 @Composable
@@ -23,7 +24,7 @@ fun SplashScreen(navController: NavHostController) {
     LaunchedEffect(key1 = true){
         delay(5000)
         navController.popBackStack()
-        navController.navigate("pantalla2")
+        navController.navigate(AppScreens.MenuInicial.ruta)
     }
 
 

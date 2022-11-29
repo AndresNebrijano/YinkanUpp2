@@ -30,31 +30,24 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.yinkanupp.navigation.AppNavigation
 import com.example.yinkanupp.ui.theme.YinkanUppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            YinkanUppTheme{
+            YinkanUppTheme {
                 Surface(
-                modifier = Modifier.fillMaxSize(),
-                color = MaterialTheme.colors.background
-            ) {
-                val navigationController = rememberNavController()
-                NavHost(navController = navigationController, startDestination = "pantalla2"){
-                    composable("pantalla1"){ SplashScreen(navigationController) }
-                    composable("pantalla2"){ MostrarMenuInicial(navigationController) }
-                    composable("pantalla3"){ Formulario(navigationController) }
-                    composable("pantalla4"){ ScafforldScreen(navigationController) }
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colors.background
+                ) {
+                    AppNavigation()
                 }
             }
-            }
-            }
         }
+    }
 }
-
-
 /*@Composable
 fun app(){
     Column(
@@ -128,7 +121,6 @@ fun app(){
 @Composable
 fun DefaultPreview(){
     YinkanUppTheme{
-        MostrarMenuInicial(navController= rememberNavController())
     }
 }
 
