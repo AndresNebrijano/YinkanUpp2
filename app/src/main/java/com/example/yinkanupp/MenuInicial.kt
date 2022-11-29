@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 
 @Composable
@@ -41,16 +42,16 @@ fun MostrarMenuInicial(navController: NavHostController){
             )
         }
 
-        ColocarBotones(text = "Nueva gymkana", separacion = 110)
-        ColocarBotones(text = "Continuar gymkana", separacion = 95)
+        ColocarBotones(text = "Nueva gymkana", separacion = 110, ruta = navController.navigate("pantalla3"))
+        ColocarBotones(text = "Continuar gymkana", separacion = 95, ruta = navController.navigate("pantalla4"))
     }
 }
 
 @Composable
-fun ColocarBotones(text: String, separacion: Int){
+fun ColocarBotones(text: String, separacion: Int, ruta: Unit){
 
     ExtendedFloatingActionButton(
-        onClick = { },
+        onClick = {ruta},
         icon = {
         },
         text = { Text (text) },
