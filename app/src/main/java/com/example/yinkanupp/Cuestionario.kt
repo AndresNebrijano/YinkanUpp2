@@ -4,11 +4,10 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.RadioButton
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -55,26 +54,46 @@ fun Cuestionario(navController: NavHostController) {
     val selectedOption= rememberSaveable { mutableStateOf(tipos[1] )}
 
     Column {
-        Text(text = "Seleced value: ${selectedOption.value.ifEmpty { "NONE" }} "  )
+        Text(text = "Selected value: ${selectedOption.value.ifEmpty { "NONE" }} ",color=Color.White,  )
         tipos.forEach { text ->
             Row(
                 Modifier
                     .fillMaxWidth()
                     .selectable(
-                        selected = ( selectedOption.value == text ),
-                        onClick = { selectedOption.value=text }
+                        selected = (selectedOption.value == text),
+                        onClick = { selectedOption.value = text }
                     )
                     .padding(horizontal = 16.dp)
             ) {
-                RadioButton(
-                    selected = (selectedOption.value == text),
-                    onClick = { selectedOption.value=text },
+                IconToggleButton(
+                    /*selected = (selectedOption.value == text),
+                    onClick = { selectedOption.value=text },*/
+                    checked = selectedOption.value == text,
+                    onCheckedChange = { selectedOption.value=text },
 
-                )
+                ){
+
+
+
+                    Icon(
+                        painter = painterResource(
+                            if (selectedOption.value == text) {
+                                R.drawable.ic_circle_checked
+                            } else {
+                                R.drawable.ic_circle_outline
+                            },
+                        ),
+                        contentDescription = null,
+                        tint = Color(0xFFA715C0)
+
+                        )
+                }
                 Text(
                     text = text,
                     style = MaterialTheme.typography.body1.merge(),
-                    modifier = Modifier.padding(start = 16.dp)
+                    color=Color.White,
+                    modifier = Modifier
+                        .padding(start = 16.dp)
                 )
             }
         }
