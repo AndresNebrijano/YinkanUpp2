@@ -48,38 +48,28 @@ fun Cuestionario(navController: NavHostController) {
         }
     }
 }
+
 @Composable
  fun onCreate() {
      val tipos = listOf("Primera", "Segundo", "Tercero")
-    val (selectedOption, onOptionSelected)= rememberSaveable { mutableStateOf(tipos[1] )}
+    val selectedOption= rememberSaveable { mutableStateOf(tipos[1] )}
 
-     /*RadioGroup(
-         selection = currentSelection.value,
-         onItemClick = { clickedItem ->
-             currentSelection.value = clickedItem
-         },
-         modifier = Modifier
-             .padding(16.dp)
-             .fillMaxWidth(),
-         items = animalTypes,
-
-     )*/
     Column {
+        Text(text = "Seleced value: ${selectedOption.value.ifEmpty { "NONE" }} "  )
         tipos.forEach { text ->
             Row(
                 Modifier
                     .fillMaxWidth()
                     .selectable(
-                        selected = (text == selectedOption),
-                        onClick = {
-                            onOptionSelected(text)
-                        }
+                        selected = ( selectedOption.value == text ),
+                        onClick = { selectedOption.value=text }
                     )
                     .padding(horizontal = 16.dp)
             ) {
                 RadioButton(
-                    selected = (text == selectedOption),
-                    onClick = { onOptionSelected(text) }
+                    selected = (selectedOption.value == text),
+                    onClick = { selectedOption.value=text },
+
                 )
                 Text(
                     text = text,
