@@ -46,7 +46,7 @@ fun Formulario(navController: NavHostController){
 
             //llamamos 3 veces a la función RellenarDatosUsuario para pintar en pantalla
             //los 3 MyText donde introducir los textos
-            RellenarDatosUsuario(text = "Mierda")
+            RellenarDatosUsuario(text = "Nombre")
             RellenarDatosUsuario(text = "Apellidos")
             RellenarDatosUsuario(text = "Curso")
 
@@ -54,6 +54,8 @@ fun Formulario(navController: NavHostController){
 
             ExtendedFloatingActionButton(
                 onClick = { navController.navigate("pantalla2") },
+                contentColor = Color.Green,
+                backgroundColor = Color.Blue,
                 icon = {
                     Icon(
                         Icons.Filled.Favorite,
@@ -61,6 +63,7 @@ fun Formulario(navController: NavHostController){
                     )
                 },
                 text = { Text("Cambiar") }
+
             )
         }
     }

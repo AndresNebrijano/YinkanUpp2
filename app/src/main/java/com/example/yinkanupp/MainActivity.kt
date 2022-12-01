@@ -25,6 +25,12 @@ import androidx.compose.ui.text.android.style.ShadowSpan
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.yinkanupp.navigation.AppNavigation
 import com.example.yinkanupp.ui.theme.YinkanUppTheme
 
 class MainActivity : ComponentActivity() {
@@ -41,18 +47,15 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-            @Composable
-            fun app() {
-                Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .paint(
-                            painter = painterResource(R.drawable.background),
-                            contentScale = ContentScale.FillWidth
-                        )
-                ) {
-
+/*@Composable
+fun app(){
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .paint(
+                painter = painterResource(R.drawable.background),
+                contentScale = ContentScale.FillWidth
+            )){
 
                     Column() {
                         val bannerhead = painterResource(R.drawable.banner)
@@ -141,6 +144,11 @@ class MainActivity : ComponentActivity() {
             }
 
 
+ @Preview(showBackground = true)
+@Composable
+fun DefaultPreview(){
+    YinkanUppTheme{
+        Formulario(navController= rememberNavController())
 
 
 
