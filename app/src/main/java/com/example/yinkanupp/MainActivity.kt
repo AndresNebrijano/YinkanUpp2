@@ -42,12 +42,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-
-
-
-
-
-
             @Composable
             fun app() {
                 Column(
