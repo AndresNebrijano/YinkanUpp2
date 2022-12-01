@@ -39,20 +39,15 @@ class MainActivity : ComponentActivity() {
         setContent {
             YinkanUppTheme {
                 Surface(
-                modifier = Modifier.fillMaxSize(),
-                color = MaterialTheme.colors.background
-            ) {
-                val navigationController = rememberNavController()
-                NavHost(navController = navigationController, startDestination = "pantalla4"){
-                    composable("pantalla1"){ Formulario(navigationController) }
-                    composable("pantalla2"){ ScafforldScreen(navigationController) }
-                    composable("pantalla3"){ MostrarMenuInicial(navigationController)}
-                    composable("pantalla4"){ Cuestionario(navigationController)}
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colors.background
+                ) {
+                    AppNavigation()
+                    }
                 }
             }
         }
     }
-}
 /*@Composable
 fun app(){
     Column(
@@ -130,6 +125,7 @@ fun DefaultPreview(){
 
     }
 }
+
 
 
 
