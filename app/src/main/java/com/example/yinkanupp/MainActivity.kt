@@ -25,6 +25,12 @@ import androidx.compose.ui.text.android.style.ShadowSpan
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.yinkanupp.navigation.AppNavigation
 import com.example.yinkanupp.ui.theme.YinkanUppTheme
 
 class MainActivity : ComponentActivity() {
@@ -36,13 +42,21 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
+                    AppNavigation()
+                    }
                 }
             }
         }
     }
-}
-
-
+/*@Composable
+fun app(){
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .paint(
+                painter = painterResource(R.drawable.background),
+                contentScale = ContentScale.FillWidth
+            )){
 
 
 
@@ -113,26 +127,11 @@ class MainActivity : ComponentActivity() {
                             )
                         )
 
-                        var myText3 by remember { mutableStateOf("") }
-                        OutlinedTextField(
-                            value = myText,
-                            onValueChange = { myText = it },
-                            modifier = Modifier.padding(50.dp, 20.dp)
-                                .background(color = Color.White.copy(alpha = 0.4f)),
-                            label = {
-                                Text(
-                                    text = "Curso",
-                                    color = Color.Black,
-                                    fontWeight = FontWeight.Bold
-                                )
-                            },
-                            colors = TextFieldDefaults.outlinedTextFieldColors(
-                                focusedBorderColor = Color.Magenta,
-                                unfocusedBorderColor = Color.Blue
-                            )
-                        )
-                    }
-                }
+ @Preview(showBackground = true)
+@Composable
+fun DefaultPreview(){
+    YinkanUppTheme{
+        Formulario(navController= rememberNavController())
 
 
             }
@@ -145,8 +144,4 @@ class MainActivity : ComponentActivity() {
 
                 }
             }
-
-
-
-
 

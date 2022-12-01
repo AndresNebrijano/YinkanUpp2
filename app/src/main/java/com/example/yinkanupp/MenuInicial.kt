@@ -15,7 +15,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
+import com.example.yinkanupp.navigation.AppScreens
 
 @Composable
 fun MostrarMenuInicial(navController: NavHostController){
@@ -29,7 +31,7 @@ fun MostrarMenuInicial(navController: NavHostController){
             )){
 
         Column(){
-            val bannerhead = painterResource(R.drawable.banner)
+            val bannerhead = painterResource(R.drawable.logo)
             Image(
                 painter = bannerhead,
                 contentDescription = null,
@@ -40,21 +42,17 @@ fun MostrarMenuInicial(navController: NavHostController){
 
             )
         }
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> Miriam
-        ColocarBotones(text = "Nueva gymkana", separacion = 110)
-        ColocarBotones(text = "Continuar gymkana", separacion = 95)
+        ColocarBotones(text = "Nueva gymkana", separacion = 110, ruta = AppScreens.Formulario.ruta)
+        ColocarBotones(text = "Continuar gymkana", separacion = 95, ruta = AppScreens.ScaffordScreen.ruta)
     }
 }
 
 @Composable
-fun ColocarBotones(text: String, separacion: Int){
+fun ColocarBotones(text: String, separacion: Int, ruta: String){
 
     ExtendedFloatingActionButton(
-        onClick = { },
+        onClick = {ruta},
         icon = {
         },
         text = { Text (text) },
