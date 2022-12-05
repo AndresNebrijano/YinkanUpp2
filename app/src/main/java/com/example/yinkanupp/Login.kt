@@ -21,6 +21,11 @@ import com.example.yinkanupp.navigation.AppScreens
 //función para lanzar la página de login de usuario
 @Composable
 fun Login(navController: NavHostController){
+
+    val nombreUsuario = "Santiago Manuel"
+    val passwordUsuario = "erarcardehija"
+    var enabled by remember { mutableStateOf(false) }
+
     //Columna general dentro de la que van a ir los elementos de la vista, la cual define
     //la imagen de fondo
     Column(
@@ -50,15 +55,21 @@ fun Login(navController: NavHostController){
 
             //llamamos 2 veces a la función RellenarDatosUsuario para pintar en pantalla
             //los 2 MyText donde introducir los textos
-            RellenarDatosUsuario(text = "Nombre")
-            RellenarDatosUsuario(text = "Password")
+            var nombreUsuario2 = rellenarDatosUsuario(text = "Nombre")
+            var passwordUsuario2 = rellenarDatosUsuario(text = "Password")
 
+            if ((nombreUsuario == nombreUsuario2) && (passwordUsuario == passwordUsuario2)){
+                enabled = true
+            }
         }
 
-        //llamamos a la función ColocarBotones para pintar el botón de Login
-        ColocarBotones(text = "Login", separacion = 60, navController, ruta = AppScreens.IniciarGymkana.ruta )
+        ExtendedFloatingActionButton(
+            onClick = {if (enabled) {navController.navigate(AppScreens.IniciarGymkana.ruta)}},
+            icon = {
+            },
+            text = { Text ("Login") },
+            modifier = Modifier
+                .padding(top = 60.dp)
+        )
     }
-
-
-
 }
