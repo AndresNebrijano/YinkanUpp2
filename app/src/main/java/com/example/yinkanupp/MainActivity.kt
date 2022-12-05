@@ -30,26 +30,21 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.yinkanupp.navigation.AppNavigation
 import com.example.yinkanupp.ui.theme.YinkanUppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            YinkanUppTheme{
+            YinkanUppTheme {
                 Surface(
-                modifier = Modifier.fillMaxSize(),
-                color = MaterialTheme.colors.background
-            ) {
-                val navigationController = rememberNavController()
-                NavHost(navController = navigationController, startDestination = "pantalla4"){
-                    composable("pantalla1"){ Formulario(navigationController) }
-                    composable("pantalla2"){ ScafforldScreen(navigationController) }
-                    composable("pantalla3"){ MostrarMenuInicial(navigationController)}
-                    composable("pantalla4"){ Cuestionario(navigationController)}
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colors.background
+                ) {
+                    AppNavigation()
+                    }
                 }
-            }
-            }
             }
         }
 }
@@ -58,11 +53,16 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview(){
     YinkanUppTheme{
-        Cuestionario(navController= rememberNavController())
-
-    }
-}
 
 
+            }
 
+
+            @Preview(showBackground = true)
+            @Composable
+            fun DefaultPreview() {
+                YinkanUppTheme {
+
+                }
+            }
 

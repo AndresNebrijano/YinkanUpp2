@@ -17,9 +17,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.yinkanupp.navigation.AppScreens
 
-//función para lanzar la página de registro de usuario
+//función para lanzar la página de login de usuario
 @Composable
-fun Formulario(navController: NavHostController){
+fun Login(navController: NavHostController){
     //Columna general dentro de la que van a ir los elementos de la vista, la cual define
     //la imagen de fondo
     Column(
@@ -42,39 +42,20 @@ fun Formulario(navController: NavHostController){
 
             )
         }
-        //Columna para situar las 3 cajas de texto
+        //Columna para situar las cajas de texto
         Column(modifier = Modifier.padding(top = 50.dp)) {
 
-            //llamamos 3 veces a la función RellenarDatosUsuario para pintar en pantalla
-            //los 3 MyText donde introducir los textos
+            //llamamos 2 veces a la función RellenarDatosUsuario para pintar en pantalla
+            //los 2 MyText donde introducir los textos
             RellenarDatosUsuario(text = "Nombre")
-            RellenarDatosUsuario(text = "Correo")
             RellenarDatosUsuario(text = "Password")
 
-            ColocarBotones(text = "Registrar", separacionTop = 60, separacionStart = 130, navController, ruta = AppScreens.IniciarGymkana.ruta )
+            //llamamos a la función ColocarBotones para pintar el botón de Login
+            ColocarBotones(text = "Login", separacionTop = 60, separacionStart = 140, navController, ruta = AppScreens.IniciarGymkana.ruta )
 
         }
     }
 
 
 
-}
-
-//función para crear las cajas de texto donde va a ir el registro de usuario
-@Composable
-fun RellenarDatosUsuario(text: String){
-
-    var myText by remember { mutableStateOf("") }
-    OutlinedTextField(
-        value= myText,
-        onValueChange = {myText = it },
-        modifier = Modifier
-            .padding(50.dp, 20.dp)
-            .background(color = Color.White.copy(alpha = 0.4f)),
-        label = { Text(text = text, color = Color.Black, fontWeight = FontWeight.Bold) },
-        colors = TextFieldDefaults.outlinedTextFieldColors(
-            focusedBorderColor = Color.Magenta,
-            unfocusedBorderColor = Color.Blue
-        )
-    )
 }
