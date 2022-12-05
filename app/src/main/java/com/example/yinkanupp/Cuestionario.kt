@@ -2,9 +2,7 @@ package com.example.yinkanupp
 
 import android.widget.RadioGroup
 import android.widget.TextView
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.material.*
@@ -18,8 +16,13 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role.Companion.Button
 import androidx.compose.ui.semantics.Role.Companion.RadioButton
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.example.yinkanupp.ui.theme.YinkanUppTheme
 
 @Composable
 fun Cuestionario(navController: NavHostController) {
@@ -50,11 +53,13 @@ fun Cuestionario(navController: NavHostController) {
 
 @Composable
  fun onCreate() {
-     val tipos = listOf("Primera", "Segundo", "Tercero")
+
+    val tipos = listOf("1980", "2022", "1881")
     val selectedOption= rememberSaveable { mutableStateOf(tipos[1] )}
 
-    Column {
-        Text(text = "Selected value: ${selectedOption.value.ifEmpty { "NONE" }} ",color=Color.White,  )
+    Column (modifier = Modifier.padding(60.dp,100.dp).border(BorderStroke(3.dp, color = Color.Magenta)).background(color = Color.Black.copy(alpha = 0.4f))){
+        Text(text="¿Cuando nació Santiago Manuel?", color = Color.White, fontSize = 30.sp, modifier = Modifier.padding(20.dp,0.dp))
+        Text(text = "Selected value: ${selectedOption.value.ifEmpty { "NONE" }} ",color=Color.White, fontSize = 25.sp)
         tipos.forEach { text ->
             Row(
                 Modifier
@@ -88,12 +93,14 @@ fun Cuestionario(navController: NavHostController) {
 
                         )
                 }
+
                 Text(
                     text = text,
                     style = MaterialTheme.typography.body1.merge(),
                     color=Color.White,
                     modifier = Modifier
-                        .padding(start = 16.dp)
+                        .padding(start = 16.dp),
+                    fontSize = 20.sp
                 )
             }
         }
