@@ -6,4 +6,5 @@ sealed class AppScreens(val ruta: String){
     object Formulario: AppScreens("formulario")
     object ScaffordScreen: AppScreens("scafford_screen")
     object IniciarGymkana: AppScreens("iniciar_gymkana")
+    object Login: AppScreens("login")
 }
