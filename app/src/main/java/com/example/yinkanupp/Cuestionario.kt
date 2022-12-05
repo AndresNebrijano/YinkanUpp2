@@ -1,17 +1,23 @@
 package com.example.yinkanupp
 
+import android.os.Bundle
 import android.widget.RadioGroup
 import android.widget.TextView
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
+import androidx.compose.material.MaterialTheme.typography
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role.Companion.Button
@@ -22,6 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.yinkanupp.navigation.AppScreens
 import com.example.yinkanupp.ui.theme.YinkanUppTheme
 
 @Composable
@@ -46,27 +53,29 @@ fun Cuestionario(navController: NavHostController) {
                     .background(color = Color.Black)
 
             )
-            onCreate()
+
         }
     }
 }
 
-@Composable
- fun onCreate() {
-
-    val tipos = listOf("1980", "2022", "1881")
-    val selectedOption= rememberSaveable { mutableStateOf(tipos[1] )}
+/*@Composable
+fun onCreate() {
+    //val tipos = arrayListOf("opcion1","opcion2","opcion3","opcion4")
+    val questions:ArrayList<Question> = getQuestions()
+    val selectedOption= rememberSaveable { mutableStateOf(questions[0])}
 
     Column (modifier = Modifier.padding(60.dp,100.dp).border(BorderStroke(3.dp, color = Color.Magenta)).background(color = Color.Black.copy(alpha = 0.4f))){
-        Text(text="¿Cuando nació Santiago Manuel?", color = Color.White, fontSize = 30.sp, modifier = Modifier.padding(20.dp,0.dp))
-        Text(text = "Selected value: ${selectedOption.value.ifEmpty { "NONE" }} ",color=Color.White, fontSize = 25.sp)
-        tipos.forEach { text ->
-            Row(
+
+
+        //Text(text="¿Cuando nació Santiago Manuel?", color = Color.White, fontSize = 30.sp, modifier = Modifier.padding(20.dp,0.dp))
+        //Text(text = "Selected value: ${selectedOption.value.ifEmpty { "NONE" }} ",color=Color.White, fontSize = 25.sp)
+        /*questions.forEach {text->
+           Row(
                 Modifier
                     .fillMaxWidth()
                     .selectable(
                         selected = (selectedOption.value == text),
-                        onClick = { selectedOption.value = text }
+                        onClick = { selectedOption.value= text }
                     )
                     .padding(horizontal = 16.dp)
             ) {
@@ -77,9 +86,6 @@ fun Cuestionario(navController: NavHostController) {
                     onCheckedChange = { selectedOption.value=text },
 
                 ){
-
-
-
                     Icon(
                         painter = painterResource(
                             if (selectedOption.value == text) {
@@ -94,23 +100,29 @@ fun Cuestionario(navController: NavHostController) {
                         )
                 }
 
-                Text(
+                /*Text(
                     text = text,
                     style = MaterialTheme.typography.body1.merge(),
                     color=Color.White,
                     modifier = Modifier
                         .padding(start = 16.dp),
                     fontSize = 20.sp
-                )
+                )*/
             }
-        }
+        }*/
+        /*Button(onClick = changeQuestion())
+            //your onclick code here
+        {
+            Text(text = "Enviar")
+        }*/
     }
  }
+@Composable
 
 /*@Composable
-fun siguiente (View v){
+fun siguiente (){
     //if por si no se marca ninguna opcion
-    if(rdOpc1.isChecked() == false && rdOpc2.isChecked() == false && rdOpc3.isChecked()==false){
+    if(selectedOption.value.isChecked() == false && rdOpc2.isChecked() == false && rdOpc3.isChecked()==false){
         Toast.makeText(this, "Elija una opción", Toast.LENGTH_SHORT).show();
     }else if(Npregunta == 1){
         //Se verifica la respuesta, si es correcta se agregan 2 puntos a la nota
@@ -205,5 +217,35 @@ fun siguiente (View v){
 fun Salir(View v){
     finish();
 }*/
+*/
 
+data class Pregunta(
+    @DrawableRes val imageResource: Int,
+    val titulo: String,
+    val respuestas: List<String>
+    )
 
+val preguntaList = listOf(
+    Pregunta(R.drawable.logo,"Pregunta 1", listOf("Zorra","Puta","HDP")),
+    Pregunta(R.drawable.logo,"Pregunta 2", listOf("Zorra","Puta","HDP")),
+    Pregunta(R.drawable.logo,"Pregunta 3", listOf("Zorra","Puta","HDP")),
+    Pregunta(R.drawable.logo,"Pregunta 4", listOf("Zorra","Puta","HDP"))
+)
+@Composable
+fun PreguntaCard(pregunta:Pregunta,navController: NavHostController){
+    val image = painterResource(R.drawable.logo)
+    Surface(/*shape = RoundedCornerShape(8.dp), elevation = 8.dp, modifier = Modifier.padding(8.dp)*/) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            val imageModifier = Modifier
+                .fillMaxHeight(60f)
+                .fillMaxWidth()
+                .clip(shape = RoundedCornerShape(8.dp))
+            Image(painter = image,contentDescription = null, /*modifier = imageModifier,*/contentScale = ContentScale.Crop)
+            Spacer(modifier = Modifier.fillMaxHeight(26f))
+            Text(text = pregunta.titulo, style = typography.h6)
+            for(respuesta in pregunta.respuestas){
+                Text(text = respuesta, style = typography.body2)
+            }
+        }
+    }
+}
