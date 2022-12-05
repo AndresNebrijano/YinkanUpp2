@@ -15,8 +15,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.example.yinkanupp.navigation.AppScreens
 
-//función para lanzar la página de inicio de sesión de usuario
+//función para lanzar la página de registro de usuario
 @Composable
 fun Formulario(navController: NavHostController){
     //Columna general dentro de la que van a ir los elementos de la vista, la cual define
@@ -47,24 +48,11 @@ fun Formulario(navController: NavHostController){
             //llamamos 3 veces a la función RellenarDatosUsuario para pintar en pantalla
             //los 3 MyText donde introducir los textos
             RellenarDatosUsuario(text = "Nombre")
-            RellenarDatosUsuario(text = "Apellidos")
-            RellenarDatosUsuario(text = "Curso")
+            RellenarDatosUsuario(text = "Correo")
+            RellenarDatosUsuario(text = "Password")
 
+            ColocarBotones(text = "Registrar", separacionTop = 60, separacionStart = 130, navController, ruta = AppScreens.IniciarGymkana.ruta )
 
-
-            ExtendedFloatingActionButton(
-                onClick = { navController.navigate("pantalla2") },
-                contentColor = Color.Green,
-                backgroundColor = Color.Blue,
-                icon = {
-                    Icon(
-                        Icons.Filled.Favorite,
-                        contentDescription = "Favorite"
-                    )
-                },
-                text = { Text("Cambiar") }
-
-            )
         }
     }
 
@@ -72,6 +60,7 @@ fun Formulario(navController: NavHostController){
 
 }
 
+//función para crear las cajas de texto donde va a ir el registro de usuario
 @Composable
 fun RellenarDatosUsuario(text: String){
 

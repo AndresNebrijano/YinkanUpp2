@@ -4,10 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.yinkanupp.Formulario
-import com.example.yinkanupp.MostrarMenuInicial
-import com.example.yinkanupp.ScafforldScreen
-import com.example.yinkanupp.SplashScreen
+import com.example.yinkanupp.*
 
 @Composable
 fun AppNavigation() {
@@ -18,5 +15,6 @@ fun AppNavigation() {
         composable(AppScreens.MenuInicial.ruta){ MostrarMenuInicial(navigationController)}
         composable(AppScreens.Formulario.ruta){ Formulario(navigationController)}
         composable(AppScreens.ScaffordScreen.ruta){ ScafforldScreen(navigationController)}
+        composable(AppScreens.IniciarGymkana.ruta){ IniciarGymkana(navigationController)}
     }
 }

@@ -5,4 +5,5 @@ sealed class AppScreens(val ruta: String){
     object MenuInicial: AppScreens("menu_inicial")
     object Formulario: AppScreens("formulario")
     object ScaffordScreen: AppScreens("scafford_screen")
+    object IniciarGymkana: AppScreens("iniciar_gymkana")
 }
