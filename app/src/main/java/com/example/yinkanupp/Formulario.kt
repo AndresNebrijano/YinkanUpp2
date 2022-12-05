@@ -50,9 +50,9 @@ fun Formulario(navController: NavHostController){
 
             //llamamos 3 veces a la función RellenarDatosUsuario para pintar en pantalla
             //los 3 MyText donde introducir los textos
-            RellenarDatosUsuario(text = "Nombre")
-            RellenarDatosUsuario(text = "Correo")
-            RellenarDatosUsuario(text = "Password")
+            rellenarDatosUsuario(text = "Nombre")
+            rellenarDatosUsuario(text = "Correo")
+            rellenarDatosUsuario(text = "Password")
 
         }
 
@@ -65,7 +65,7 @@ fun Formulario(navController: NavHostController){
 
 //función para crear las cajas de texto donde va a ir el registro de usuario
 @Composable
-fun RellenarDatosUsuario(text: String){
+fun rellenarDatosUsuario(text: String): String {
 
     var myText by remember { mutableStateOf("") }
     OutlinedTextField(
@@ -80,4 +80,6 @@ fun RellenarDatosUsuario(text: String){
             unfocusedBorderColor = Color.Blue
         )
     )
+
+    return myText
 }
