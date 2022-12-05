@@ -16,5 +16,6 @@ fun AppNavigation() {
         composable(AppScreens.Formulario.ruta){ Formulario(navigationController)}
         composable(AppScreens.ScaffordScreen.ruta){ ScafforldScreen(navigationController)}
         composable(AppScreens.IniciarGymkana.ruta){ IniciarGymkana(navigationController)}
+        composable(AppScreens.Login.ruta){ Login(navigationController)}
     }
 }

@@ -3,25 +3,25 @@ package com.example.yinkanupp
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.ExtendedFloatingActionButton
-import androidx.compose.material.Icon
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.yinkanupp.navigation.AppScreens
 
+//función para lanzar la página de login de usuario
 @Composable
-fun MostrarMenuInicial(navController: NavHostController){
-
+fun Login(navController: NavHostController){
+    //Columna general dentro de la que van a ir los elementos de la vista, la cual define
+    //la imagen de fondo
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -30,33 +30,32 @@ fun MostrarMenuInicial(navController: NavHostController){
                 contentScale = ContentScale.FillWidth
             )){
 
+        //Columna para el banner del header
         Column(){
             val bannerhead = painterResource(R.drawable.logo)
             Image(
                 painter = bannerhead,
                 contentDescription = null,
                 modifier = Modifier
-                    .height(100.dp)
-                    .fillMaxWidth()
-                    .background(color = Color.Black)
+                    .height(90.dp)
+                    .fillMaxWidth(),
 
             )
         }
+        //Columna para situar las cajas de texto
+        Column(modifier = Modifier.padding(top = 50.dp)) {
 
-        ColocarBotones(text = "Registrar usuario", separacionTop = 110, separacionStart = 110, navController, ruta = AppScreens.Formulario.ruta )
-        ColocarBotones(text = "Iniciar sesión", separacionTop = 120, separacionStart = 120, navController, ruta = AppScreens.Login.ruta)
+            //llamamos 2 veces a la función RellenarDatosUsuario para pintar en pantalla
+            //los 2 MyText donde introducir los textos
+            RellenarDatosUsuario(text = "Nombre")
+            RellenarDatosUsuario(text = "Password")
+
+            //llamamos a la función ColocarBotones para pintar el botón de Login
+            ColocarBotones(text = "Login", separacionTop = 60, separacionStart = 140, navController, ruta = AppScreens.IniciarGymkana.ruta )
+
+        }
     }
-}
 
-@Composable
-fun ColocarBotones(text: String, separacionTop: Int, separacionStart: Int, navController: NavHostController, ruta: String){
 
-    ExtendedFloatingActionButton(
-        onClick = {navController.navigate(ruta)},
-        icon = {
-        },
-        text = { Text (text) },
-        modifier = Modifier
-            .padding(top = separacionTop.dp, start = separacionStart.dp)
-    )
+
 }
