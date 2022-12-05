@@ -20,7 +20,7 @@ import androidx.navigation.NavHostController
 import com.example.yinkanupp.navigation.AppScreens
 
 @Composable
-fun MostrarMenuInicial(navController: NavHostController){
+fun IniciarGymkana(navController: NavHostController){
 
     Column(
         modifier = Modifier
@@ -43,20 +43,7 @@ fun MostrarMenuInicial(navController: NavHostController){
             )
         }
 
-        ColocarBotones(text = "Registrar usuario", separacion = 110, navController, ruta = AppScreens.Formulario.ruta )
-        ColocarBotones(text = "Iniciar sesión", separacion = 120, navController, ruta = AppScreens.ScaffordScreen.ruta)
+        ColocarBotones(text = "Nueva Gymkana", separacion = 110, navController, ruta = AppScreens.Formulario.ruta )
+        ColocarBotones(text = "Continuar Gymkana", separacion = 95, navController, ruta = AppScreens.ScaffordScreen.ruta)
     }
-}
-
-@Composable
-fun ColocarBotones(text: String, separacion: Int,navController: NavHostController, ruta: String){
-
-    ExtendedFloatingActionButton(
-        onClick = {navController.navigate(ruta)},
-        icon = {
-        },
-        text = { Text (text) },
-        modifier = Modifier
-            .padding(top = separacion.dp, start = separacion.dp)
-    )
 }
