@@ -9,6 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
@@ -23,6 +24,8 @@ import com.example.yinkanupp.navigation.AppScreens
 fun MostrarMenuInicial(navController: NavHostController){
 
     Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
         modifier = Modifier
             .fillMaxSize()
             .paint(
@@ -36,20 +39,19 @@ fun MostrarMenuInicial(navController: NavHostController){
                 painter = bannerhead,
                 contentDescription = null,
                 modifier = Modifier
-                    .height(100.dp)
+                    .height(90.dp)
                     .fillMaxWidth()
-                    .background(color = Color.Black)
 
             )
         }
 
-        ColocarBotones(text = "Registrar usuario", separacionTop = 110, separacionStart = 110, navController, ruta = AppScreens.Formulario.ruta )
-        ColocarBotones(text = "Iniciar sesión", separacionTop = 120, separacionStart = 120, navController, ruta = AppScreens.Login.ruta)
+        ColocarBotones(text = "Registrar usuario", separacion = 60, navController, ruta = AppScreens.Formulario.ruta )
+        ColocarBotones(text = "Iniciar sesión", separacion = 60, navController, ruta = AppScreens.Login.ruta)
     }
 }
 
 @Composable
-fun ColocarBotones(text: String, separacionTop: Int, separacionStart: Int, navController: NavHostController, ruta: String){
+fun ColocarBotones(text: String, separacion: Int, navController: NavHostController, ruta: String){
 
     ExtendedFloatingActionButton(
         onClick = {navController.navigate(ruta)},
@@ -57,6 +59,6 @@ fun ColocarBotones(text: String, separacionTop: Int, separacionStart: Int, navCo
         },
         text = { Text (text) },
         modifier = Modifier
-            .padding(top = separacionTop.dp, start = separacionStart.dp)
+            .padding(top = separacion.dp)
     )
 }

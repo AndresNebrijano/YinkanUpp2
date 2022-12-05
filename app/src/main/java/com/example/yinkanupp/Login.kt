@@ -7,6 +7,7 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
@@ -23,6 +24,8 @@ fun Login(navController: NavHostController){
     //Columna general dentro de la que van a ir los elementos de la vista, la cual define
     //la imagen de fondo
     Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
         modifier = Modifier
             .fillMaxSize()
             .paint(
@@ -50,10 +53,10 @@ fun Login(navController: NavHostController){
             RellenarDatosUsuario(text = "Nombre")
             RellenarDatosUsuario(text = "Password")
 
-            //llamamos a la función ColocarBotones para pintar el botón de Login
-            ColocarBotones(text = "Login", separacionTop = 60, separacionStart = 140, navController, ruta = AppScreens.IniciarGymkana.ruta )
-
         }
+
+        //llamamos a la función ColocarBotones para pintar el botón de Login
+        ColocarBotones(text = "Login", separacion = 60, navController, ruta = AppScreens.IniciarGymkana.ruta )
     }
 
 

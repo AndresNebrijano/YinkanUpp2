@@ -9,6 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
@@ -23,6 +24,8 @@ import com.example.yinkanupp.navigation.AppScreens
 fun IniciarGymkana(navController: NavHostController){
 
     Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
         modifier = Modifier
             .fillMaxSize()
             .paint(
@@ -36,14 +39,13 @@ fun IniciarGymkana(navController: NavHostController){
                 painter = bannerhead,
                 contentDescription = null,
                 modifier = Modifier
-                    .height(100.dp)
+                    .height(90.dp)
                     .fillMaxWidth()
-                    .background(color = Color.Black)
 
             )
         }
 
-        ColocarBotones(text = "Nueva Gymkana", separacionTop = 110, separacionStart = 110, navController, ruta = AppScreens.Formulario.ruta )
-        ColocarBotones(text = "Continuar Gymkana", separacionTop = 95, separacionStart = 95, navController, ruta = AppScreens.ScaffordScreen.ruta)
+        ColocarBotones(text = "Nueva Gymkana", separacion = 60, navController, ruta = AppScreens.Formulario.ruta )
+        ColocarBotones(text = "Continuar Gymkana", separacion = 60, navController, ruta = AppScreens.ScaffordScreen.ruta)
     }
 }
