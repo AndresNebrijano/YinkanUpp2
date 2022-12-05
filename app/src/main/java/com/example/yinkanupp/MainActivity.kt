@@ -54,15 +54,6 @@ class MainActivity : ComponentActivity() {
 fun DefaultPreview(){
     YinkanUppTheme{
 
-
-            }
-
-
-            @Preview(showBackground = true)
-            @Composable
-            fun DefaultPreview() {
-                YinkanUppTheme {
-
-                }
-            }
+    }
+}
 
