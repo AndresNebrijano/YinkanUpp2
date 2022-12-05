@@ -43,13 +43,13 @@ fun MostrarMenuInicial(navController: NavHostController){
             )
         }
 
-        ColocarBotones(text = "Registrar usuario", separacion = 110, navController, ruta = AppScreens.Formulario.ruta )
-        ColocarBotones(text = "Iniciar sesión", separacion = 120, navController, ruta = AppScreens.ScaffordScreen.ruta)
+        ColocarBotones(text = "Registrar usuario", separacionTop = 110, separacionStart = 110, navController, ruta = AppScreens.Formulario.ruta )
+        ColocarBotones(text = "Iniciar sesión", separacionTop = 120, separacionStart = 120, navController, ruta = AppScreens.ScaffordScreen.ruta)
     }
 }
 
 @Composable
-fun ColocarBotones(text: String, separacion: Int,navController: NavHostController, ruta: String){
+fun ColocarBotones(text: String, separacionTop: Int, separacionStart: Int, navController: NavHostController, ruta: String){
 
     ExtendedFloatingActionButton(
         onClick = {navController.navigate(ruta)},
@@ -57,6 +57,6 @@ fun ColocarBotones(text: String, separacion: Int,navController: NavHostControlle
         },
         text = { Text (text) },
         modifier = Modifier
-            .padding(top = separacion.dp, start = separacion.dp)
+            .padding(top = separacionTop.dp, start = separacionStart.dp)
     )
 }

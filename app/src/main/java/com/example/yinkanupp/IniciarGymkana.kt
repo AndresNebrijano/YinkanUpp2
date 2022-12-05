@@ -43,7 +43,7 @@ fun IniciarGymkana(navController: NavHostController){
             )
         }
 
-        ColocarBotones(text = "Nueva Gymkana", separacion = 110, navController, ruta = AppScreens.Formulario.ruta )
-        ColocarBotones(text = "Continuar Gymkana", separacion = 95, navController, ruta = AppScreens.ScaffordScreen.ruta)
+        ColocarBotones(text = "Nueva Gymkana", separacionTop = 110, separacionStart = 110, navController, ruta = AppScreens.Formulario.ruta )
+        ColocarBotones(text = "Continuar Gymkana", separacionTop = 95, separacionStart = 95, navController, ruta = AppScreens.ScaffordScreen.ruta)
     }
 }
