@@ -7,6 +7,7 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
@@ -23,6 +24,8 @@ fun Formulario(navController: NavHostController){
     //Columna general dentro de la que van a ir los elementos de la vista, la cual define
     //la imagen de fondo
     Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
         modifier = Modifier
             .fillMaxSize()
             .paint(
@@ -38,7 +41,7 @@ fun Formulario(navController: NavHostController){
                 contentDescription = null,
                 modifier = Modifier
                     .height(90.dp)
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
 
             )
         }
@@ -47,13 +50,13 @@ fun Formulario(navController: NavHostController){
 
             //llamamos 3 veces a la función RellenarDatosUsuario para pintar en pantalla
             //los 3 MyText donde introducir los textos
-            RellenarDatosUsuario(text = "Nombre")
-            RellenarDatosUsuario(text = "Correo")
-            RellenarDatosUsuario(text = "Password")
-
-            ColocarBotones(text = "Registrar", separacionTop = 60, separacionStart = 130, navController, ruta = AppScreens.IniciarGymkana.ruta )
+            rellenarDatosUsuario(text = "Nombre")
+            rellenarDatosUsuario(text = "Correo")
+            rellenarDatosUsuario(text = "Password")
 
         }
+
+        ColocarBotones(text = "Registrar", separacion = 60, navController, ruta = AppScreens.IniciarGymkana.ruta )
     }
 
 
@@ -62,7 +65,7 @@ fun Formulario(navController: NavHostController){
 
 //función para crear las cajas de texto donde va a ir el registro de usuario
 @Composable
-fun RellenarDatosUsuario(text: String){
+fun rellenarDatosUsuario(text: String): String {
 
     var myText by remember { mutableStateOf("") }
     OutlinedTextField(
@@ -77,4 +80,6 @@ fun RellenarDatosUsuario(text: String){
             unfocusedBorderColor = Color.Blue
         )
     )
+
+    return myText
 }

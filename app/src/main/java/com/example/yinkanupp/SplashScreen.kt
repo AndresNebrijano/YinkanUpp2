@@ -46,7 +46,7 @@ fun Splash() {
         Text(text = "Development by Torrija Team",
             textAlign = TextAlign.Center,
             color = Color.White,
-            modifier = Modifier.padding(top = 200.dp)
+            modifier = Modifier.padding(top = 20.dp)
         )
 
     }

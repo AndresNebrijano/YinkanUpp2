@@ -51,8 +51,9 @@ class MainActivity : ComponentActivity() {
 
  @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
-     YinkanUppTheme {
-         TiposScreen(listaTipos = ListaTipos.tipos)
-     }
- }
+fun DefaultPreview(){
+    YinkanUppTheme{
+
+    }
+}
+
