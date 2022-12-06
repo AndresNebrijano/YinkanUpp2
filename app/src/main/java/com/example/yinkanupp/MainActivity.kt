@@ -53,6 +53,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
      YinkanUppTheme {
-
+         TiposScreen(listaTipos = ListaTipos.tipos)
      }
  }
