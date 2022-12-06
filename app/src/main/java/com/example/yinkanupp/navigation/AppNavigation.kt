@@ -11,7 +11,7 @@ fun AppNavigation() {
     val navigationController = rememberNavController()
     NavHost(navController = navigationController, startDestination = AppScreens.SplashScreen.ruta
     ){
-        composable(AppScreens.SplashScreen.ruta){ Cuestionario(navigationController)}
+        composable(AppScreens.SplashScreen.ruta){ SplashScreen(navigationController)}
         composable(AppScreens.MenuInicial.ruta){ MostrarMenuInicial(navigationController)}
         composable(AppScreens.Formulario.ruta){ Formulario(navigationController)}
         composable(AppScreens.ScaffordScreen.ruta){ ScafforldScreen(navigationController)}
