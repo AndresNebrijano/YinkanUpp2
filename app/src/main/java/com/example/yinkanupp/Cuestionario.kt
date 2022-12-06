@@ -86,20 +86,30 @@ fun Cardlistas(titulo: String,respuestas: List<String>) {
 
     val selectedOption = rememberSaveable { mutableStateOf(respuestas[1]) }
     Card() {
-        Column() {
+        Column(modifier = Modifier
+            .padding(60.dp, 100.dp)
+            .border(BorderStroke(3.dp, color = Color.Magenta))
+            .background(color = Color.Black.copy(alpha = 0.4f))) {
             Text(text = titulo)
 
-            respuestas.forEach {
-                Row{
+            respuestas.forEach { item->
+                Row(
+                    modifier = Modifier
+                        .selectable(
+                        selected = (selectedOption.value == item),
+                        onClick = {selectedOption.value = item},
+                        )
+                        .padding(horizontal = 16.dp)
+                ){
 
                     IconToggleButton(
-                    checked = selectedOption.value==it,
-                    onCheckedChange = { selectedOption.value = it}
+                    checked = selectedOption.value==item,
+                    onCheckedChange = { selectedOption.value = item}
 
                     ) {
                     Icon(
                         painter = painterResource(
-                            if (selectedOption.value==it) {
+                            if (selectedOption.value==item) {
                                 R.drawable.ic_circle_checked
                             } else {
                                 R.drawable.ic_circle_outline
@@ -111,7 +121,12 @@ fun Cardlistas(titulo: String,respuestas: List<String>) {
                     )
                     }
                     Text(
-                        text = it
+                        text = item,
+                        style = MaterialTheme.typography.body1.merge(),
+                        color=Color.White,
+                        modifier = Modifier
+                            .padding(start = 16.dp),
+                        fontSize = 20.sp
                     )
                 }
             }
