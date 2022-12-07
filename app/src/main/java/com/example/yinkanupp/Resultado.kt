@@ -50,7 +50,7 @@ fun Resultado (navController: NavHostController) {
                         contentDescription = null,
                         modifier = Modifier
                             .padding(100.dp,30.dp))
-                    Text(text = " Has obtenido $contador puntos, es un poco triste..... ",
+                    Text(text = " Has obtenido $contador /20 puntos. Es un poco triste..... ",
                         fontSize = 25.sp,
                         textAlign = TextAlign.Center,
                         color = Color.White,
@@ -68,7 +68,7 @@ fun Resultado (navController: NavHostController) {
                         contentDescription = null,
                         modifier = Modifier
                             .padding(100.dp,30.dp))
-                    Text(text = " Has obtenido $contador puntos, nos vamos acercando ",
+                    Text(text = " Has obtenido $contador /20 puntos. Nos vamos acercando ",
                         fontSize = 25.sp,
                         textAlign = TextAlign.Center,
                         color = Color.White,
@@ -89,7 +89,7 @@ fun Resultado (navController: NavHostController) {
                         modifier = Modifier
                             .padding(100.dp, 30.dp))
                     Text(
-                        text = " Has obtenido $contador puntos, eres simplemente apto ",
+                        text = " Has obtenido $contador /20 puntos. Eres simplemente apto ",
                         textAlign = TextAlign.Center,
                         fontSize = 25.sp,
                         color = Color.White,
@@ -108,7 +108,7 @@ fun Resultado (navController: NavHostController) {
                             contentDescription = null,
                             modifier = Modifier
                                 .padding(100.dp,30.dp))
-                        Text(text = " Has obtenido $contador puntos, epicardo ",
+                        Text(text = " Has obtenido $contador /20 puntos. Epicardo ",
                             fontSize = 25.sp,
                             textAlign = TextAlign.Center,
                             color = Color.White,

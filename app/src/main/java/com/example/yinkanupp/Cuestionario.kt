@@ -73,7 +73,7 @@ object ListaTipos{
         Pregunta("¿Como se llama el famoso heroe que se enfrentó a Malenia y ayudo a miles de jugadores?", respuestas = listOf("I Am Her","I Am Solo Here","Let Me Solo Her")),
         Pregunta( "¿Cual es la herramienta favorita de Tetsuya Nomura?", respuestas = listOf("Cremalleras","Personajes Furros","LLaves Espada")),
         Pregunta( "¿Que famoso alienigena tiene un comic/manga en la epoca de Nobunaga?", respuestas = listOf("E.T.","Predator","Stitch")),
-        Pregunta("¿Cuanta inflación ha sufrido 'El Diablo' en el último mes", respuestas =  listOf("100%","50%","30%")),
+        Pregunta("¿Cuanta inflación ha sufrido 'El Diablo' en el último mes?", respuestas =  listOf("100%","50%","30%")),
         Pregunta("Termina la frase: 'El tiempo no es importante,.....'", respuestas = listOf("...solo saber donde quieres ir","...solo la vida es importante","...sal de fiesta y olvida tus problemas")),
         Pregunta( "¿Cuantas veces ha muerto Kenny en 'South Park' en total?", respuestas = listOf("103","92","79")),
         Pregunta( "¿Que animal fue el más repetido en la visita del 3DOM a Cáceres?", respuestas = listOf("Zanganos","Burros","Ovejas")))
