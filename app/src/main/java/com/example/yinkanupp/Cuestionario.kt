@@ -56,8 +56,7 @@ fun Cuestionario(navController: NavHostController) {
                     .background(color = Color.Black)
 
             )
-            TiposScreen(listaTipos = ListaTipos.tipos)
-            //RespuestaElegida()
+            TiposScreen(listaTipos = ListaTipos.tipos, navController)
         }
     }
 }
@@ -80,7 +79,7 @@ object ListaTipos{
         Pregunta( "¿Que animal fue el más repetido en la visita del 3DOM a Cáceres?", respuestas = listOf("Zanganos","Burros","Ovejas")))
 }
 @Composable
-fun TiposScreen (listaTipos: List<Pregunta>) {
+fun TiposScreen (listaTipos: List<Pregunta>, navController: NavHostController) {
 
     listaTipos.forEach { Pregunta ->
         Cardlistas(
@@ -88,9 +87,8 @@ fun TiposScreen (listaTipos: List<Pregunta>) {
             respuestas = Pregunta.respuestas
         )
     }
-    Button(onClick = { println("$contador") }) {
-        Text(text = "lol: $contador")
-    }
+    ColocarBotones(text = "Comprobar", separacion = 60, navController, ruta = AppScreens.Resultado.ruta )
+
 }
 
 @Composable
@@ -155,52 +153,52 @@ fun Cardlistas(titulo: String,respuestas: List<String>) {
             }
             if (selectedOption.value.equals("¡Somos desarrolladores!")){
 
-            contador += 1
+            contador++
 
         }
             if (selectedOption.value.equals("Ouch")){
 
-                contador += 1
+                contador++
 
             }
             if (selectedOption.value.equals("11")){
 
-                contador += 1
+                contador++
 
             }
             if (selectedOption.value.equals("Let Me Solo Her")){
 
-                contador += 1
+                contador++
 
             }
             if (selectedOption.value.equals("Cremalleras")){
 
-                contador += 1
+                contador++
 
             }
             if (selectedOption.value.equals("Stitch")){
 
-                contador += 1
+                contador++
 
             }
             if (selectedOption.value.equals("30%")){
 
-                contador += 1
+                contador++
 
             }
             if (selectedOption.value.equals("...solo la vida es importante")){
 
-                contador += 1
+                contador++
 
             }
             if (selectedOption.value.equals("103")){
 
-                contador += 1
+                contador++
 
             }
             if (selectedOption.value.equals("Ovejas")){
 
-                contador += 1
+                contador++
 
             }
         }

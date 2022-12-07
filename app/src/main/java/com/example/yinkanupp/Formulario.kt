@@ -21,6 +21,9 @@ import com.example.yinkanupp.navigation.AppScreens
 //función para lanzar la página de registro de usuario
 @Composable
 fun Formulario(navController: NavHostController){
+
+    var enabled by remember { mutableStateOf(false) }
+    var mostrarAlerta by remember { mutableStateOf(false) }
     //Columna general dentro de la que van a ir los elementos de la vista, la cual define
     //la imagen de fondo
     Column(
@@ -50,15 +53,44 @@ fun Formulario(navController: NavHostController){
 
             //llamamos 3 veces a la función RellenarDatosUsuario para pintar en pantalla
             //los 3 MyText donde introducir los textos
-            rellenarDatosUsuario(text = "Nombre")
-            rellenarDatosUsuario(text = "Correo")
-            rellenarDatosUsuario(text = "Password")
+            var nombreRegistro=rellenarDatosUsuario(text = "Nombre")
+            var correoRegistro=rellenarDatosUsuario(text = "Correo")
+            var paswordRegistro=rellenarDatosUsuario(text = "Password")
 
+            if ((!nombreRegistro.isEmpty()) && (!correoRegistro.isEmpty()) && (!paswordRegistro.isEmpty())){
+                enabled = true
+            }
         }
-
-        ColocarBotones(text = "Registrar", separacion = 60, navController, ruta = AppScreens.IniciarGymkana.ruta )
+        ExtendedFloatingActionButton(
+            onClick = {if (enabled) {
+                navController.navigate(AppScreens.IniciarGymkana.ruta)
+            }else{
+                mostrarAlerta = true
+            }
+            },
+            icon = {
+            },
+            text = { Text ("Registrar") },
+            modifier = Modifier
+                .padding(top = 60.dp)
+        )
     }
 
+    if (mostrarAlerta) {
+        AlertDialog(
+            onDismissRequest = { mostrarAlerta = false },
+            title = { Text(text = "Todos los campos son obligatorios") },
+            text = { Text(text = "Por favor, rellene los campos") },
+            confirmButton = {
+                Button(onClick = { mostrarAlerta = false },
+                    colors = ButtonDefaults.buttonColors(
+                        backgroundColor = Color.LightGray)
+                ) {
+                    Text(text = "Confirmar", color = Color.Blue)
+                }
+            }
+        )
+    }
 
 
 }
