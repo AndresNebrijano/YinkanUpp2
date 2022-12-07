@@ -20,13 +20,13 @@ import androidx.navigation.NavHostController
 import com.example.yinkanupp.navigation.AppScreens
 
 //función para lanzar la página de login de usuario
-val nombreUsuario = "Santiago Manuel"
-val passwordUsuario = "erarcardehija"
 
+var nombreUsuario=""
 
 @Composable
 fun Login(navController: NavHostController){
-
+     nombreUsuario = "Santiago Manuel"
+    val passwordUsuario = "erarcardehija"
     var enabled by remember { mutableStateOf(false) }
     var mostrarAlerta by remember { mutableStateOf(false) }
 
