@@ -96,7 +96,7 @@ fun TiposScreen (listaTipos: List<Pregunta>) {
 @Composable
 fun Cardlistas(titulo: String,respuestas: List<String>) {
 
-    val selectedOption = rememberSaveable { mutableStateOf(respuestas[1]) }
+    val selectedOption = rememberSaveable { mutableStateOf(" ") }
 
     Card(
         modifier = Modifier
@@ -114,7 +114,7 @@ fun Cardlistas(titulo: String,respuestas: List<String>) {
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(30.dp,15.dp)
             )
-            Text(text = "Selected value: ${selectedOption.value.ifEmpty { "NONE" }}")
+            //Text(text = "Selected value: ${selectedOption.value.ifEmpty { "NONE" }}")
             respuestas.forEach { item->
                 Row(
                     modifier = Modifier
