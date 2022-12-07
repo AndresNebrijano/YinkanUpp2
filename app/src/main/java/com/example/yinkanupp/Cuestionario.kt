@@ -23,6 +23,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role.Companion.Button
 import androidx.compose.ui.semantics.Role.Companion.RadioButton
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -56,19 +57,27 @@ fun Cuestionario(navController: NavHostController) {
 
             )
             TiposScreen(listaTipos = ListaTipos.tipos)
+            //RespuestaElegida()
         }
     }
 }
+var contador = 0;
 data class Pregunta(
     val titulo: String,
     val respuestas: List<String>
 )
 object ListaTipos{
     val tipos = listOf(
-        Pregunta( "Pregunta 1", respuestas = listOf("Zorra","Puta","HDP")),
-    Pregunta( "Pregunta 2", respuestas = listOf("Zorra","Puta","HDP")),
-    Pregunta("Pregunta 3", respuestas =  listOf("Zorra","Puta","HDP")),
-    Pregunta("Pregunta 4", respuestas = listOf("Zorra","Puta","HDP")))
+        Pregunta( "¿Cual es el grito de guerra de DAM?", respuestas = listOf("¿Más Proyectos?","¡Zomoz dezarrolladorez!","¡Somos desarrolladores!")),
+        Pregunta( "¿Cual de las siguientes opciones no es un lenguaje?", respuestas = listOf("Cow","Chicken","Ouch")),
+        Pregunta("Si tenemos 2000$, y cada Pokeball cuesta 200$. ¿Cuantas Pokeball podremos comprar?", respuestas =  listOf("10","11","¿Que es una Pokeball?")),
+        Pregunta("¿Como se llama el famoso heroe que se enfrentó a Malenia y ayudo a miles de jugadores?", respuestas = listOf("I Am Her","I Am Solo Here","Let Me Solo Her")),
+        Pregunta( "¿Cual es la herramienta favorita de Tetsuya Nomura?", respuestas = listOf("Cremalleras","Personajes Furros","LLaves Espada")),
+        Pregunta( "¿Que famoso alienigena tiene un comic/manga en la epoca de Nobunaga?", respuestas = listOf("E.T.","Predator","Stitch")),
+        Pregunta("¿Cuanta inflación ha sufrido 'El Diablo' en el último mes", respuestas =  listOf("100%","50%","30%")),
+        Pregunta("Termina la frase: 'El tiempo no es importante,.....'", respuestas = listOf("...solo saber donde quieres ir","...solo la vida es importante","...sal de fiesta y olvida tus problemas")),
+        Pregunta( "¿Cuantas veces ha muerto Kenny en 'South Park' en total?", respuestas = listOf("103","92","79")),
+        Pregunta( "¿Que animal fue el más repetido en la visita del 3DOM a Cáceres?", respuestas = listOf("Zanganos","Burros","Ovejas")))
 }
 @Composable
 fun TiposScreen (listaTipos: List<Pregunta>) {
@@ -79,13 +88,16 @@ fun TiposScreen (listaTipos: List<Pregunta>) {
             respuestas = Pregunta.respuestas
         )
     }
+    Button(onClick = { println("$contador") }) {
+        Text(text = "lol: $contador")
+    }
 }
 
 @Composable
 fun Cardlistas(titulo: String,respuestas: List<String>) {
 
-
     val selectedOption = rememberSaveable { mutableStateOf(respuestas[1]) }
+
     Card(
         modifier = Modifier
             .padding(3.dp)
@@ -93,23 +105,29 @@ fun Cardlistas(titulo: String,respuestas: List<String>) {
 
     ) {
         Column(modifier = Modifier
-            .border(BorderStroke(3.dp, color = Color.Magenta))
-            .background(color = Color.Black.copy(alpha = 0.4f))) {
-            Text(text = titulo)
-
+            .border(BorderStroke(3.dp, color = Color.Cyan))
+            .background(color = Color.Black.copy(alpha = 0.8f))) {
+            Text(
+                text = titulo,
+                fontSize = 25.sp,
+                color = Color.White,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(30.dp,15.dp)
+            )
+            Text(text = "Selected value: ${selectedOption.value.ifEmpty { "NONE" }}")
             respuestas.forEach { item->
                 Row(
                     modifier = Modifier
                         .selectable(
-                        selected = (selectedOption.value == item),
-                        onClick = {selectedOption.value = item},
+                            selected = (selectedOption.value == item),
+                            onClick = { selectedOption.value = item },
                         )
                         .padding(horizontal = 16.dp)
                 ){
 
                     IconToggleButton(
                     checked = selectedOption.value==item,
-                    onCheckedChange = { selectedOption.value = item}
+                    onCheckedChange = { selectedOption.value = item},
 
                     ) {
                     Icon(
@@ -135,6 +153,57 @@ fun Cardlistas(titulo: String,respuestas: List<String>) {
                     )
                 }
             }
+            if (selectedOption.value.equals("¡Somos desarrolladores!")){
+
+            contador += 1
+
+        }
+            if (selectedOption.value.equals("Ouch")){
+
+                contador += 1
+
+            }
+            if (selectedOption.value.equals("11")){
+
+                contador += 1
+
+            }
+            if (selectedOption.value.equals("Let Me Solo Her")){
+
+                contador += 1
+
+            }
+            if (selectedOption.value.equals("Cremalleras")){
+
+                contador += 1
+
+            }
+            if (selectedOption.value.equals("Stitch")){
+
+                contador += 1
+
+            }
+            if (selectedOption.value.equals("30%")){
+
+                contador += 1
+
+            }
+            if (selectedOption.value.equals("...solo la vida es importante")){
+
+                contador += 1
+
+            }
+            if (selectedOption.value.equals("103")){
+
+                contador += 1
+
+            }
+            if (selectedOption.value.equals("Ovejas")){
+
+                contador += 1
+
+            }
         }
     }
+
 }
