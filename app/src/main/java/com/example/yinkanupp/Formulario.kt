@@ -3,6 +3,8 @@ package com.example.yinkanupp
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
@@ -19,6 +21,7 @@ import androidx.navigation.NavHostController
 import com.example.yinkanupp.navigation.AppScreens
 
 //función para lanzar la página de registro de usuario
+
 @Composable
 fun Formulario(navController: NavHostController){
 
@@ -34,7 +37,9 @@ fun Formulario(navController: NavHostController){
             .paint(
                 painter = painterResource(R.drawable.background),
                 contentScale = ContentScale.FillWidth
-            )){
+            )
+            .verticalScroll(rememberScrollState())
+    ){
 
         //Columna para el banner del header
         Column(){
@@ -53,9 +58,9 @@ fun Formulario(navController: NavHostController){
 
             //llamamos 3 veces a la función RellenarDatosUsuario para pintar en pantalla
             //los 3 MyText donde introducir los textos
-            var nombreRegistro=rellenarDatosUsuario(text = "Nombre")
-            var correoRegistro=rellenarDatosUsuario(text = "Correo")
-            var paswordRegistro=rellenarDatosUsuario(text = "Password")
+            var nombreRegistro = rellenarDatosUsuario(text = "Nombre")
+            var correoRegistro = rellenarDatosUsuario(text = "Correo")
+            var paswordRegistro = rellenarDatosUsuario(text = "Password")
 
             if ((!nombreRegistro.isEmpty()) && (!correoRegistro.isEmpty()) && (!paswordRegistro.isEmpty())){
                 enabled = true
