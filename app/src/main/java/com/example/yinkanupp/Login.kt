@@ -3,6 +3,8 @@ package com.example.yinkanupp
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
@@ -20,10 +22,12 @@ import androidx.navigation.NavHostController
 import com.example.yinkanupp.navigation.AppScreens
 
 //función para lanzar la página de login de usuario
+
+var nombreUsuario=""
+
 @Composable
 fun Login(navController: NavHostController){
-
-    val nombreUsuario = "Santiago Manuel"
+     nombreUsuario = "Santiago Manuel"
     val passwordUsuario = "erarcardehija"
     var enabled by remember { mutableStateOf(false) }
     var mostrarAlerta by remember { mutableStateOf(false) }
@@ -38,7 +42,10 @@ fun Login(navController: NavHostController){
             .paint(
                 painter = painterResource(R.drawable.background),
                 contentScale = ContentScale.FillWidth
-            )){
+
+            )
+            .verticalScroll(rememberScrollState())
+    ){
 
         //Columna para el banner del header
         Column(){
