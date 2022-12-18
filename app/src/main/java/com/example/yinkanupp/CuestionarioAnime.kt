@@ -59,16 +59,16 @@ data class PreguntaAnime(
 object ListaTiposAnime{
 
     val tipos = listOf(
-        Pregunta( "Anime y manga", respuestas = listOf("¿Más Proyectos?","¡Zomoz dezarrolladorez!","¡Somos desarrolladores!")),
-        Pregunta( "¿Cual de las siguientes opciones no es un lenguaje?", respuestas = listOf("Cow","Chicken","Ouch")),
-        Pregunta("Si tenemos 2000$, y cada Pokeball cuesta 200$. ¿Cuantas Pokeball podremos comprar?", respuestas =  listOf("10","11","¿Que es una Pokeball?")),
-        Pregunta("¿Como se llama el famoso heroe que se enfrentó a Malenia y ayudo a miles de jugadores?", respuestas = listOf("I Am Her","I Am Solo Here","Let Me Solo Her")),
-        Pregunta( "¿Cual es la herramienta favorita de Tetsuya Nomura?", respuestas = listOf("Cremalleras","Personajes Furros","LLaves Espada")),
-        Pregunta( "¿Que famoso alienigena tiene un comic/manga en la epoca de Nobunaga?", respuestas = listOf("E.T.","Predator","Stitch")),
-        Pregunta("¿Cuanta inflación ha sufrido 'El Diablo' en el último mes?", respuestas =  listOf("100%","50%","30%")),
-        Pregunta("Termina la frase: 'El tiempo no es importante,.....'", respuestas = listOf("...solo saber donde quieres ir","...solo la vida es importante","...sal de fiesta y olvida tus problemas")),
-        Pregunta( "¿Cuantas veces ha muerto Kenny en 'South Park' en total?", respuestas = listOf("103","92","79")),
-        Pregunta( "¿Que animal fue el más repetido en la visita del 3DOM a Cáceres?", respuestas = listOf("Zanganos","Burros","Ovejas")))
+        Pregunta( "¿En qué idioma están escritas las instrucciones de la Death Note?", respuestas = listOf("Japonés","Inglés","Francés")),
+        Pregunta( "¿Qué parte del cuerpo le falta a Guts, protagonista de Berserk?", respuestas = listOf("Pierna","Oreja","Brazo")),
+        Pregunta("¿Qué otro poder hay en One Piece aparte de las Frutas del Diablo?", respuestas =  listOf("Haki","Chakra","Chi")),
+        Pregunta("¿Cuántas bolas de dragón hay que reunir para invocar a Shenron?", respuestas = listOf("5","9","7")),
+        Pregunta( "En Naruto ¿qué animal es la forma definitiva de Choji?", respuestas = listOf("Oso","Mariposa","Serpiente")),
+        Pregunta( "¿De qué color tiene el pelo Deku, el prota de My Hero Academia?", respuestas = listOf("Rojo","Azul","Verde")),
+        Pregunta("¿Cuál es el apellido de Conan, el niño detective?", respuestas =  listOf("Edogawa","Tanaka","Kobayashi")),
+        Pregunta("¿Quién es Lupin III?", respuestas = listOf("Asesino","Ladrón","Policía")),
+        Pregunta( "En Inazuma Eleven ¿cuál es la primera técnica de Axel Blaze?", respuestas = listOf("Mano celestial","Tornado de fuego","El muro")),
+        Pregunta( "¿Contra qué luchan los protagonistas de Evangelion?", respuestas = listOf("Kaiju","Demonios","Ángeles")))
 }
 @Composable
 fun TiposScreenAnime (listaTiposAnime: List<Pregunta>, navController: NavHostController) {
@@ -143,52 +143,52 @@ fun CardlistasAnime(titulo: String,respuestas: List<String>) {
                     )
                 }
             }
-            if (selectedOption.value.equals("¡Somos desarrolladores!")){
+            if (selectedOption.value.equals("Inglés")){
 
                 contadorAnime++
 
             }
-            if (selectedOption.value.equals("Ouch")){
+            if (selectedOption.value.equals("Brazo")){
 
                 contadorAnime++
 
             }
-            if (selectedOption.value.equals("11")){
+            if (selectedOption.value.equals("Haki")){
 
                 contadorAnime++
 
             }
-            if (selectedOption.value.equals("Let Me Solo Her")){
+            if (selectedOption.value.equals("7")){
 
                 contadorAnime++
 
             }
-            if (selectedOption.value.equals("Cremalleras")){
+            if (selectedOption.value.equals("Mariposa")){
 
                 contadorAnime++
 
             }
-            if (selectedOption.value.equals("Stitch")){
+            if (selectedOption.value.equals("Verde")){
 
                 contadorAnime++
 
             }
-            if (selectedOption.value.equals("30%")){
+            if (selectedOption.value.equals("Edogawa")){
 
                 contadorAnime++
 
             }
-            if (selectedOption.value.equals("...solo la vida es importante")){
+            if (selectedOption.value.equals("Ladrón")){
 
                 contadorAnime++
 
             }
-            if (selectedOption.value.equals("103")){
+            if (selectedOption.value.equals("Tornado de fuego")){
 
                 contadorAnime++
 
             }
-            if (selectedOption.value.equals("Ovejas")){
+            if (selectedOption.value.equals("Ángeles")){
 
                 contadorAnime++
 

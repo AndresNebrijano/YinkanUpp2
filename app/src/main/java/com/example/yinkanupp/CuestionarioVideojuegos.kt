@@ -59,16 +59,16 @@ data class PreguntaVideojuegos(
 object ListaTiposVideojuegos{
 
     val tipos = listOf(
-        Pregunta( "Videojuegos", respuestas = listOf("¿Más Proyectos?","¡Zomoz dezarrolladorez!","¡Somos desarrolladores!")),
-        Pregunta( "¿Cual de las siguientes opciones no es un lenguaje?", respuestas = listOf("Cow","Chicken","Ouch")),
-        Pregunta("Si tenemos 2000$, y cada Pokeball cuesta 200$. ¿Cuantas Pokeball podremos comprar?", respuestas =  listOf("10","11","¿Que es una Pokeball?")),
-        Pregunta("¿Como se llama el famoso heroe que se enfrentó a Malenia y ayudo a miles de jugadores?", respuestas = listOf("I Am Her","I Am Solo Here","Let Me Solo Her")),
-        Pregunta( "¿Cual es la herramienta favorita de Tetsuya Nomura?", respuestas = listOf("Cremalleras","Personajes Furros","LLaves Espada")),
-        Pregunta( "¿Que famoso alienigena tiene un comic/manga en la epoca de Nobunaga?", respuestas = listOf("E.T.","Predator","Stitch")),
-        Pregunta("¿Cuanta inflación ha sufrido 'El Diablo' en el último mes?", respuestas =  listOf("100%","50%","30%")),
-        Pregunta("Termina la frase: 'El tiempo no es importante,.....'", respuestas = listOf("...solo saber donde quieres ir","...solo la vida es importante","...sal de fiesta y olvida tus problemas")),
-        Pregunta( "¿Cuantas veces ha muerto Kenny en 'South Park' en total?", respuestas = listOf("103","92","79")),
-        Pregunta( "¿Que animal fue el más repetido en la visita del 3DOM a Cáceres?", respuestas = listOf("Zanganos","Burros","Ovejas")))
+        Pregunta( "¿Cuál de estos poderes fue introducido en Super Mario Galaxy?", respuestas = listOf("Flor de fuego","Ardilla voladora","Abeja")),
+        Pregunta( "En Zelda: Majora´s Mask ¿en qué convierte Skull Kid a Link?", respuestas = listOf("Zora","Goron","Deku")),
+        Pregunta("¿Cuántos Pokémon hay en la primera generación?", respuestas =  listOf("100","151","150")),
+        Pregunta("¿Qué animal es Crash?", respuestas = listOf("Koala","Bandicoot","Canguro")),
+        Pregunta( "¿Cómo se llama el hermano de Dante en la saga Devil May Cry?", respuestas = listOf("Vergil","Alphonse","Liquid")),
+        Pregunta( "¿Cómo se obtienen los Yokai en Yokai Watch?", respuestas = listOf("Tienda de Yokai","Máquina de Gashapon","Talismanes de invocación")),
+        Pregunta("¿Qué personaje se introdujo en la expansión de Diablo III?", respuestas =  listOf("Amazona","Druida","Cruzado")),
+        Pregunta("En Final Fantasy IX ¿cuántos Vals Negros se enfrentan a los héroes?", respuestas = listOf("3","2","5")),
+        Pregunta( "¿Qué le pasa a Sir Arthur (Ghost and Goblins) cuando le golpean una vez?", respuestas = listOf("Pierde el escudo","Se queda en calzoncillos","Pierde un punto de vida")),
+        Pregunta( "¿Qué famoso juego hizo que hubiera escasez de monedas en Japón?", respuestas = listOf("Tetris","Pac-Man","Space Invaders")))
 }
 @Composable
 fun TiposScreenVideojuegos (listaTiposVideojuegos: List<Pregunta>, navController: NavHostController) {
@@ -143,52 +143,52 @@ fun CardlistasVideojuegos(titulo: String,respuestas: List<String>) {
                     )
                 }
             }
-            if (selectedOption.value.equals("¡Somos desarrolladores!")){
+            if (selectedOption.value.equals("Abeja")){
 
                 contadorVideojuegos++
 
             }
-            if (selectedOption.value.equals("Ouch")){
+            if (selectedOption.value.equals("Deku")){
 
                 contadorVideojuegos++
 
             }
-            if (selectedOption.value.equals("11")){
+            if (selectedOption.value.equals("151")){
 
                 contadorVideojuegos++
 
             }
-            if (selectedOption.value.equals("Let Me Solo Her")){
+            if (selectedOption.value.equals("Bandicoot")){
 
                 contadorVideojuegos++
 
             }
-            if (selectedOption.value.equals("Cremalleras")){
+            if (selectedOption.value.equals("Vergil")){
 
                 contadorVideojuegos++
 
             }
-            if (selectedOption.value.equals("Stitch")){
+            if (selectedOption.value.equals("Máquina de Gashapon")){
 
                 contadorVideojuegos++
 
             }
-            if (selectedOption.value.equals("30%")){
+            if (selectedOption.value.equals("Cruzado")){
 
                 contadorVideojuegos++
 
             }
-            if (selectedOption.value.equals("...solo la vida es importante")){
+            if (selectedOption.value.equals("3")){
 
                 contadorVideojuegos++
 
             }
-            if (selectedOption.value.equals("103")){
+            if (selectedOption.value.equals("Se queda en calzoncillos")){
 
                 contadorVideojuegos++
 
             }
-            if (selectedOption.value.equals("Ovejas")){
+            if (selectedOption.value.equals("Space Invaders")){
 
                 contadorVideojuegos++
 
