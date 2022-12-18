@@ -48,7 +48,12 @@ fun IniciarGymkana(navController: NavHostController){
 
             )
         }
-        Text(text = "¡¡¡Bienvenido $nombreUsuario!!!", color = Color.White)
+        if (nombreUsuario == "") {
+            Text(text = "¡¡¡Bienvenido/a $nombreUsuarioRegistro!!!", color = Color.White)
+        }else {
+            Text(text = "¡¡¡Bienvenido/a $nombreUsuario!!!", color = Color.White)
+        }
+
         ColocarBotones(text = "Nueva Gymkana", separacion = 60, navController, ruta = AppScreens.ElegirGymkana.ruta )
         ColocarBotones(text = "Continuar Gymkana", separacion = 60, navController, ruta = AppScreens.ElegirGymkana.ruta)
     }
