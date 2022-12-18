@@ -54,7 +54,7 @@ fun ResultadoVideojuegos (navController: NavHostController) {
                     .padding(50.dp,50.dp)
                     .border(width = 8.dp, color = Color.Cyan)
                     .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp))) {
-                    Image(painter = painterResource(R.drawable.i5),
+                    Image(painter = painterResource(R.drawable.mario),
                         contentDescription = null,
                         modifier = Modifier
                             .padding(100.dp,30.dp))
@@ -72,11 +72,11 @@ fun ResultadoVideojuegos (navController: NavHostController) {
                     .padding(50.dp,50.dp)
                     .border(width = 8.dp, color = Color.Cyan)
                     .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp))) {
-                    Image(painter = painterResource(R.drawable.i10),
+                    Image(painter = painterResource(R.drawable.tingle),
                         contentDescription = null,
                         modifier = Modifier
                             .padding(100.dp,30.dp))
-                    Text(text = " Has obtenido $contadorVideojuegos /20 puntos. Nos vamos acercando ",
+                    Text(text = " Has obtenido $contadorVideojuegos /20 puntos. Una puntuación tan ridícula como Tingle",
                         fontSize = 25.sp,
                         textAlign = TextAlign.Center,
                         color = Color.White,
@@ -92,12 +92,12 @@ fun ResultadoVideojuegos (navController: NavHostController) {
                         .border(width = 8.dp, color = Color.Cyan)
                         .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp))) {
                     Image(
-                        painter = painterResource(R.drawable.i15),
+                        painter = painterResource(R.drawable.tetris),
                         contentDescription = null,
                         modifier = Modifier
                             .padding(100.dp, 30.dp))
                     Text(
-                        text = " Has obtenido $contadorVideojuegos /20 puntos. Eres simplemente apto ",
+                        text = " Has obtenido $contadorVideojuegos /20 puntos. Has logrado encajar unos cuantos tetriminos",
                         textAlign = TextAlign.Center,
                         fontSize = 25.sp,
                         color = Color.White,
@@ -112,11 +112,11 @@ fun ResultadoVideojuegos (navController: NavHostController) {
                     .padding(50.dp,50.dp)
                     .border(width = 8.dp, color = Color.Cyan)
                     .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp))) {
-                    Image(painter = painterResource(R.drawable.i20),
+                    Image(painter = painterResource(R.drawable.kratos),
                         contentDescription = null,
                         modifier = Modifier
                             .padding(100.dp,30.dp))
-                    Text(text = " Has obtenido $contadorVideojuegos /20 puntos. Epicardo ",
+                    Text(text = " Has obtenido $contadorVideojuegos /20 puntos. Que tiemble el Olimpo ante tí",
                         fontSize = 25.sp,
                         textAlign = TextAlign.Center,
                         color = Color.White,

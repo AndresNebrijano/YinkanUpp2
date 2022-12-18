@@ -51,11 +51,11 @@ fun Resultado (navController: NavHostController) {
                     .padding(50.dp,50.dp)
                     .border(width = 8.dp, color = Color.Cyan)
                     .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp))) {
-                    Image(painter = painterResource(R.drawable.i5),
+                    Image(painter = painterResource(R.drawable.dracarys),
                         contentDescription = null,
                         modifier = Modifier
                             .padding(100.dp,30.dp))
-                    Text(text = " Has obtenido $contador /20 puntos. Es un poco triste..... ",
+                    Text(text = " Has obtenido $contador /20 puntos. ¡¡Dracarys!!",
                         fontSize = 25.sp,
                         textAlign = TextAlign.Center,
                         color = Color.White,
@@ -69,11 +69,11 @@ fun Resultado (navController: NavHostController) {
                     .padding(50.dp,50.dp)
                     .border(width = 8.dp, color = Color.Cyan)
                     .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp))) {
-                    Image(painter = painterResource(R.drawable.i10),
+                    Image(painter = painterResource(R.drawable.benkenobi),
                         contentDescription = null,
                         modifier = Modifier
                             .padding(100.dp,30.dp))
-                    Text(text = " Has obtenido $contador /20 puntos. Nos vamos acercando ",
+                    Text(text = " Has obtenido $contador /20 puntos. Estos no son los resultados que buscáis",
                         fontSize = 25.sp,
                         textAlign = TextAlign.Center,
                         color = Color.White,
@@ -89,12 +89,12 @@ fun Resultado (navController: NavHostController) {
                         .border(width = 8.dp, color = Color.Cyan)
                         .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp))) {
                     Image(
-                        painter = painterResource(R.drawable.i15),
+                        painter = painterResource(R.drawable.ronweasley),
                         contentDescription = null,
                         modifier = Modifier
                             .padding(100.dp, 30.dp))
                     Text(
-                        text = " Has obtenido $contador /20 puntos. Eres simplemente apto ",
+                        text = " Has obtenido $contador /20 puntos. Has demostrado ser apto, como Ron en el ajedrez",
                         textAlign = TextAlign.Center,
                         fontSize = 25.sp,
                         color = Color.White,
@@ -109,11 +109,11 @@ fun Resultado (navController: NavHostController) {
                         .padding(50.dp,50.dp)
                         .border(width = 8.dp, color = Color.Cyan)
                         .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp))) {
-                        Image(painter = painterResource(R.drawable.i20),
+                        Image(painter = painterResource(R.drawable.heman),
                             contentDescription = null,
                             modifier = Modifier
                                 .padding(100.dp,30.dp))
-                        Text(text = " Has obtenido $contador /20 puntos. Epicardo ",
+                        Text(text = " Has obtenido $contador /20 puntos. Epicardo, tú tienes el poder",
                             fontSize = 25.sp,
                             textAlign = TextAlign.Center,
                             color = Color.White,

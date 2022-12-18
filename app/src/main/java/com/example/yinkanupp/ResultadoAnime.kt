@@ -54,11 +54,11 @@ fun ResultadoAnime (navController: NavHostController) {
                     .padding(50.dp,50.dp)
                     .border(width = 8.dp, color = Color.Cyan)
                     .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp))) {
-                    Image(painter = painterResource(R.drawable.i5),
+                    Image(painter = painterResource(R.drawable.yamcha),
                         contentDescription = null,
                         modifier = Modifier
                             .padding(100.dp,30.dp))
-                    Text(text = " Has obtenido $contadorAnime /20 puntos. Ni Deku de crío era tan inútil ",
+                    Text(text = " Has obtenido $contadorAnime /20 puntos. Eres como Yamcha, un 0 muerto a la izquierda",
                         fontSize = 25.sp,
                         textAlign = TextAlign.Center,
                         color = Color.White,
@@ -72,11 +72,11 @@ fun ResultadoAnime (navController: NavHostController) {
                     .padding(50.dp,50.dp)
                     .border(width = 8.dp, color = Color.Cyan)
                     .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp))) {
-                    Image(painter = painterResource(R.drawable.i10),
+                    Image(painter = painterResource(R.drawable.deku),
                         contentDescription = null,
                         modifier = Modifier
                             .padding(100.dp,30.dp))
-                    Text(text = " Has obtenido $contadorAnime /20 puntos. Nos vamos acercando ",
+                    Text(text = " Has obtenido $contadorAnime /20 puntos. Ni Deku de crío era tan inútil",
                         fontSize = 25.sp,
                         textAlign = TextAlign.Center,
                         color = Color.White,
@@ -92,12 +92,12 @@ fun ResultadoAnime (navController: NavHostController) {
                         .border(width = 8.dp, color = Color.Cyan)
                         .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp))) {
                     Image(
-                        painter = painterResource(R.drawable.i15),
+                        painter = painterResource(R.drawable.gurren),
                         contentDescription = null,
                         modifier = Modifier
                             .padding(100.dp, 30.dp))
                     Text(
-                        text = " Has obtenido $contadorAnime /20 puntos. Eres simplemente apto ",
+                        text = " Has obtenido $contadorAnime /20 puntos. Un poco más y taladras el cielo",
                         textAlign = TextAlign.Center,
                         fontSize = 25.sp,
                         color = Color.White,
@@ -112,11 +112,11 @@ fun ResultadoAnime (navController: NavHostController) {
                     .padding(50.dp,50.dp)
                     .border(width = 8.dp, color = Color.Cyan)
                     .clip(RoundedCornerShape(15.dp, 15.dp, 0.dp, 0.dp))) {
-                    Image(painter = painterResource(R.drawable.i20),
+                    Image(painter = painterResource(R.drawable.kira),
                         contentDescription = null,
                         modifier = Modifier
                             .padding(100.dp,30.dp))
-                    Text(text = " Has obtenido $contadorAnime /20 puntos. Epicardo ",
+                    Text(text = " Has obtenido $contadorAnime /20 puntos. Eres más listo que el mismísimo Kira",
                         fontSize = 25.sp,
                         textAlign = TextAlign.Center,
                         color = Color.White,
