@@ -9,5 +9,7 @@ sealed class AppScreens(val ruta: String){
     object Login: AppScreens("login")
     object ElegirGymkana: AppScreens("elegir_gymkana")
     object Cuestionario: AppScreens("cuestionario")
+    object CuestionarioAnime: AppScreens("cuestionario_anime")
     object Resultado: AppScreens("resultado")
+    object ResultadoAnime: AppScreens("resultado_anime")
 }

@@ -43,7 +43,7 @@ fun ElegirGymkana(navController: NavHostController){
             )
         }
         ColocarBotones(text = "Películas y series", separacion = 60, navController, ruta = AppScreens.Cuestionario.ruta )
-        ColocarBotones(text = "Anime y manga", separacion = 60, navController, ruta = AppScreens.ScaffordScreen.ruta)
+        ColocarBotones(text = "Anime y manga", separacion = 60, navController, ruta = AppScreens.CuestionarioAnime.ruta)
         ColocarBotones(text = "Videojuegos", separacion = 60, navController, ruta = AppScreens.ScaffordScreen.ruta)
     }
 }

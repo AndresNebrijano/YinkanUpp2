@@ -20,6 +20,8 @@ fun AppNavigation() {
         composable(AppScreens.Login.ruta){ Login(navigationController)}
         composable(AppScreens.ElegirGymkana.ruta){ ElegirGymkana(navigationController) }
         composable(AppScreens.Cuestionario.ruta){ Cuestionario(navigationController)}
+        composable(AppScreens.CuestionarioAnime.ruta){ CuestionarioAnime(navigationController)}
         composable(AppScreens.Resultado.ruta){ Resultado(navigationController) }
+        composable(AppScreens.ResultadoAnime.ruta){ ResultadoAnime(navigationController) }
     }
 }
