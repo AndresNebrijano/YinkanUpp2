@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.yinkanupp.*
+import kotlin.math.E
 
 @Composable
 fun AppNavigation() {
@@ -17,6 +18,7 @@ fun AppNavigation() {
         composable(AppScreens.ScaffordScreen.ruta){ ScafforldScreen(navigationController)}
         composable(AppScreens.IniciarGymkana.ruta){ IniciarGymkana(navigationController)}
         composable(AppScreens.Login.ruta){ Login(navigationController)}
+        composable(AppScreens.ElegirGymkana.ruta){ ElegirGymkana(navigationController) }
         composable(AppScreens.Cuestionario.ruta){ Cuestionario(navigationController)}
         composable(AppScreens.Resultado.ruta){ Resultado(navigationController) }
     }
