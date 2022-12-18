@@ -22,6 +22,7 @@ import com.example.yinkanupp.navigation.AppScreens
 
 //función para lanzar la página de registro de usuario
 
+var nombreUsuarioRegistro=""
 @Composable
 fun Formulario(navController: NavHostController){
 
@@ -58,11 +59,11 @@ fun Formulario(navController: NavHostController){
 
             //llamamos 3 veces a la función RellenarDatosUsuario para pintar en pantalla
             //los 3 MyText donde introducir los textos
-            var nombreRegistro = rellenarDatosUsuario(text = "Nombre")
+            nombreUsuarioRegistro = rellenarDatosUsuario(text = "Nombre")
             var correoRegistro = rellenarDatosUsuario(text = "Correo")
             var paswordRegistro = rellenarDatosUsuario(text = "Password")
 
-            if ((!nombreRegistro.isEmpty()) && (!correoRegistro.isEmpty()) && (!paswordRegistro.isEmpty())){
+            if ((!nombreUsuarioRegistro.isEmpty()) && (!correoRegistro.isEmpty()) && (!paswordRegistro.isEmpty())){
                 enabled = true
             }
         }
