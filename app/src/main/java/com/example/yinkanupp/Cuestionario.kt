@@ -81,7 +81,7 @@ object ListaTipos{
         Pregunta( "¿Cómo se llama el padre de Bella en la película de Disney?", respuestas = listOf("François","Maurice","Renard")),
         Pregunta( "¿De qué está hecho el núcleo de la varita de Harry Potter?", respuestas = listOf("Fibra de corazón de dragón","Pelo de cola de unicornio","Pluma de fénix")),
         Pregunta("Aparte del Maestro de las Llaves, ¿a quién más necesitamos para invocar a Gozer, el Destructor?", respuestas =  listOf("Guardiana de la Puerta","Maestra de la Cerradura","Guardiana del Portal")),
-        Pregunta("Termina la frase: 'El tiempo no es importante,.....'", respuestas = listOf("...solo saber donde quieres ir","...solo la vida es importante","...sal de fiesta y olvida tus problemas")),
+        Pregunta("Termina la frase: 'El tiempo no es importante,...'", respuestas = listOf("...solo saber donde quieres ir","...solo la vida es importante","...sal de fiesta y olvida tus problemas")),
         Pregunta( "¿En qué componente de los seres vivos se mide la Fuerza de un Jedi?", respuestas = listOf("Globolitos","Forcenses","Midiclorianos")),
         Pregunta( "Valar Morghulis...", respuestas = listOf("Valar Oloris","Valar Dohaeris","Valar Dothrakis")))
 }
