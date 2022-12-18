@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.paint
@@ -16,6 +17,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.yinkanupp.navigation.AppScreens
 
 @Composable
 fun Resultado (navController: NavHostController) {
@@ -29,7 +31,10 @@ fun Resultado (navController: NavHostController) {
             .verticalScroll(rememberScrollState())
     ) {
 
-        Column {
+        Column (
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+                ){
             val bannerhead = painterResource(R.drawable.logo)
             Image(
                 painter = bannerhead,
@@ -98,7 +103,7 @@ fun Resultado (navController: NavHostController) {
                             .padding(25.dp, 20.dp, 25.dp, 20.dp)
                     )
                 }
-            }else{
+            }  else{
                     Column(modifier = Modifier
                         .fillMaxWidth()
                         .padding(50.dp,50.dp)
@@ -115,7 +120,9 @@ fun Resultado (navController: NavHostController) {
                             fontWeight = FontWeight.Bold,
                             modifier = Modifier
                                 .padding(25.dp,20.dp,25.dp,20.dp))
+                        }
                     }
-            }
-    }
-}}
+            ColocarBotones(text = "Volver al menú", separacion = 60, navController, ruta = AppScreens.IniciarGymkana.ruta )
+                }
+        }
+}

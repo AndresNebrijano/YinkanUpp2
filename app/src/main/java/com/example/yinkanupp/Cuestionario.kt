@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.paint
@@ -36,6 +37,8 @@ import com.example.yinkanupp.ui.theme.YinkanUppTheme
 @Composable
 fun Cuestionario(navController: NavHostController) {
     Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
         modifier = Modifier
             .fillMaxSize()
             .paint(
@@ -45,7 +48,10 @@ fun Cuestionario(navController: NavHostController) {
             .verticalScroll(rememberScrollState())
     ) {
 
-        Column {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
             val bannerhead = painterResource(R.drawable.logo)
             Image(
                 painter = bannerhead,
