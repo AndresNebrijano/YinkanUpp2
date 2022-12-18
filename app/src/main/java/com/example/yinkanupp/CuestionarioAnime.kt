@@ -64,7 +64,7 @@ object ListaTiposAnime{
         Pregunta("¿Qué otro poder hay en One Piece aparte de las Frutas del Diablo?", respuestas =  listOf("Haki","Chakra","Chi")),
         Pregunta("¿Cuántas bolas de dragón hay que reunir para invocar a Shenron?", respuestas = listOf("5","9","7")),
         Pregunta( "En Naruto ¿qué animal es la forma definitiva de Choji?", respuestas = listOf("Oso","Mariposa","Serpiente")),
-        Pregunta( "¿Que famoso alienigena tiene un comic/manga en la epoca de Nobunaga?", respuestas = listOf("E.T.","Predator","Stitch")),
+        Pregunta( "¿De qué color tiene el pelo Deku, el prota de My Hero Academia?", respuestas = listOf("Rojo","Azul","Verde")),
         Pregunta("¿Cuál es el apellido de Conan, el niño detective?", respuestas =  listOf("Edogawa","Tanaka","Kobayashi")),
         Pregunta("¿Quién es Lupin III?", respuestas = listOf("Asesino","Ladrón","Policía")),
         Pregunta( "En Inazuma Eleven ¿cuál es la primera técnica de Axel Blaze?", respuestas = listOf("Mano celestial","Tornado de fuego","El muro")),
@@ -168,7 +168,7 @@ fun CardlistasAnime(titulo: String,respuestas: List<String>) {
                 contadorAnime++
 
             }
-            if (selectedOption.value.equals("Stitch")){
+            if (selectedOption.value.equals("Verde")){
 
                 contadorAnime++
 
