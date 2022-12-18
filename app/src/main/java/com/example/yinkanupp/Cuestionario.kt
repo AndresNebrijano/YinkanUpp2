@@ -66,6 +66,7 @@ data class Pregunta(
     val respuestas: List<String>
 )
 object ListaTipos{
+
     val tipos = listOf(
         Pregunta( "¿Cual es el grito de guerra de DAM?", respuestas = listOf("¿Más Proyectos?","¡Zomoz dezarrolladorez!","¡Somos desarrolladores!")),
         Pregunta( "¿Cual de las siguientes opciones no es un lenguaje?", respuestas = listOf("Cow","Chicken","Ouch")),

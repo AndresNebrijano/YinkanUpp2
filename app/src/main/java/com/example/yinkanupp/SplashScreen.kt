@@ -43,7 +43,7 @@ fun Splash() {
             contentDescription = "Logo YinkanUpp",
             Modifier.size(250.dp, 250.dp))
 
-        Text(text = "Development by Torrija Team",
+        Text(text = "Developed by Torrija Team",
             textAlign = TextAlign.Center,
             color = Color.White,
             modifier = Modifier.padding(top = 20.dp)
