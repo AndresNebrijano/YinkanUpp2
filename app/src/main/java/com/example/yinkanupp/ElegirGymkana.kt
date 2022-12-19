@@ -1,15 +1,10 @@
 package com.example.yinkanupp
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.ExtendedFloatingActionButton
-import androidx.compose.material.Icon
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -18,12 +13,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.yinkanupp.navigation.AppScreens
 
 @Composable
-fun IniciarGymkana(navController: NavHostController){
+fun ElegirGymkana(navController: NavHostController){
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -48,13 +42,8 @@ fun IniciarGymkana(navController: NavHostController){
 
             )
         }
-        if (nombreUsuario == "") {
-            Text(text = "¡¡¡Bienvenido/a $nombreUsuarioRegistro!!!", color = Color.White)
-        }else {
-            Text(text = "¡¡¡Bienvenido/a $nombreUsuario!!!", color = Color.White)
-        }
-
-        ColocarBotones(text = "Nueva Gymkana", separacion = 60, navController, ruta = AppScreens.ElegirGymkana.ruta )
-        ColocarBotones(text = "Continuar Gymkana", separacion = 60, navController, ruta = AppScreens.ElegirGymkana.ruta)
+        ColocarBotones(text = "Películas y series", separacion = 60, navController, ruta = AppScreens.Cuestionario.ruta )
+        ColocarBotones(text = "Anime y manga", separacion = 60, navController, ruta = AppScreens.CuestionarioAnime.ruta)
+        ColocarBotones(text = "Videojuegos", separacion = 60, navController, ruta = AppScreens.CuestionarioVideojuegos.ruta)
     }
 }

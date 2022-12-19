@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.paint
@@ -36,6 +37,8 @@ import com.example.yinkanupp.ui.theme.YinkanUppTheme
 @Composable
 fun Cuestionario(navController: NavHostController) {
     Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
         modifier = Modifier
             .fillMaxSize()
             .paint(
@@ -45,7 +48,10 @@ fun Cuestionario(navController: NavHostController) {
             .verticalScroll(rememberScrollState())
     ) {
 
-        Column {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
             val bannerhead = painterResource(R.drawable.logo)
             Image(
                 painter = bannerhead,
@@ -66,17 +72,18 @@ data class Pregunta(
     val respuestas: List<String>
 )
 object ListaTipos{
+
     val tipos = listOf(
-        Pregunta( "¿Cual es el grito de guerra de DAM?", respuestas = listOf("¿Más Proyectos?","¡Zomoz dezarrolladorez!","¡Somos desarrolladores!")),
-        Pregunta( "¿Cual de las siguientes opciones no es un lenguaje?", respuestas = listOf("Cow","Chicken","Ouch")),
-        Pregunta("Si tenemos 2000$, y cada Pokeball cuesta 200$. ¿Cuantas Pokeball podremos comprar?", respuestas =  listOf("10","11","¿Que es una Pokeball?")),
-        Pregunta("¿Como se llama el famoso heroe que se enfrentó a Malenia y ayudo a miles de jugadores?", respuestas = listOf("I Am Her","I Am Solo Here","Let Me Solo Her")),
-        Pregunta( "¿Cual es la herramienta favorita de Tetsuya Nomura?", respuestas = listOf("Cremalleras","Personajes Furros","LLaves Espada")),
-        Pregunta( "¿Que famoso alienigena tiene un comic/manga en la epoca de Nobunaga?", respuestas = listOf("E.T.","Predator","Stitch")),
-        Pregunta("¿Cuanta inflación ha sufrido 'El Diablo' en el último mes?", respuestas =  listOf("100%","50%","30%")),
-        Pregunta("Termina la frase: 'El tiempo no es importante,.....'", respuestas = listOf("...solo saber donde quieres ir","...solo la vida es importante","...sal de fiesta y olvida tus problemas")),
-        Pregunta( "¿Cuantas veces ha muerto Kenny en 'South Park' en total?", respuestas = listOf("103","92","79")),
-        Pregunta( "¿Que animal fue el más repetido en la visita del 3DOM a Cáceres?", respuestas = listOf("Zanganos","Burros","Ovejas")))
+        Pregunta( "En Star Trek ¿a qué raza pertenece Spock?", respuestas = listOf("Vulcano","Borg","Klingon")),
+        Pregunta( "¿Cuántos anillos recibieron los señores enanos?", respuestas = listOf("9","3","7")),
+        Pregunta("¿Cuál es el verdadero nombre de Indiana Jones?", respuestas =  listOf("James","John","Henry")),
+        Pregunta("¿Qué personaje tiene la Gema del Tiempo en las peliculas de Marvel?", respuestas = listOf("Dr Strange","Loki","Visión")),
+        Pregunta( "¿Cómo se llama el padre de Bella en la película de Disney?", respuestas = listOf("François","Maurice","Renard")),
+        Pregunta( "¿De qué está hecho el núcleo de la varita de Harry Potter?", respuestas = listOf("Fibra de corazón de dragón","Pelo de cola de unicornio","Pluma de fénix")),
+        Pregunta("Aparte del Maestro de las Llaves, ¿a quién más necesitamos para invocar a Gozer, el Destructor?", respuestas =  listOf("Guardiana de la Puerta","Maestra de la Cerradura","Guardiana del Portal")),
+        Pregunta("Termina la frase: 'El tiempo no es importante,...'", respuestas = listOf("...solo saber donde quieres ir","...solo la vida es importante","...sal de fiesta y olvida tus problemas")),
+        Pregunta( "¿En qué componente de los seres vivos se mide la Fuerza de un Jedi?", respuestas = listOf("Globolitos","Forcenses","Midiclorianos")),
+        Pregunta( "Valar Morghulis...", respuestas = listOf("Valar Oloris","Valar Dohaeris","Valar Dothrakis")))
 }
 @Composable
 fun TiposScreen (listaTipos: List<Pregunta>, navController: NavHostController) {
@@ -87,6 +94,7 @@ fun TiposScreen (listaTipos: List<Pregunta>, navController: NavHostController) {
             respuestas = Pregunta.respuestas
         )
     }
+
     ColocarBotones(text = "Comprobar", separacion = 60, navController, ruta = AppScreens.Resultado.ruta )
 
 }
@@ -151,37 +159,37 @@ fun Cardlistas(titulo: String,respuestas: List<String>) {
                     )
                 }
             }
-            if (selectedOption.value.equals("¡Somos desarrolladores!")){
+            if (selectedOption.value.equals("Vulcano")){
 
             contador++
 
         }
-            if (selectedOption.value.equals("Ouch")){
+            if (selectedOption.value.equals("7")){
 
                 contador++
 
             }
-            if (selectedOption.value.equals("11")){
+            if (selectedOption.value.equals("Henry")){
 
                 contador++
 
             }
-            if (selectedOption.value.equals("Let Me Solo Her")){
+            if (selectedOption.value.equals("Dr Strange")){
 
                 contador++
 
             }
-            if (selectedOption.value.equals("Cremalleras")){
+            if (selectedOption.value.equals("Maurice")){
 
                 contador++
 
             }
-            if (selectedOption.value.equals("Stitch")){
+            if (selectedOption.value.equals("Pluma de fénix")){
 
                 contador++
 
             }
-            if (selectedOption.value.equals("30%")){
+            if (selectedOption.value.equals("Guardiana de la Puerta")){
 
                 contador++
 
@@ -191,12 +199,12 @@ fun Cardlistas(titulo: String,respuestas: List<String>) {
                 contador++
 
             }
-            if (selectedOption.value.equals("103")){
+            if (selectedOption.value.equals("Midiclorianos")){
 
                 contador++
 
             }
-            if (selectedOption.value.equals("Ovejas")){
+            if (selectedOption.value.equals("Valar Dohaeris")){
 
                 contador++
 
