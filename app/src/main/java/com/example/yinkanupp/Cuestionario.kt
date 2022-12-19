@@ -94,6 +94,7 @@ fun TiposScreen (listaTipos: List<Pregunta>, navController: NavHostController) {
             respuestas = Pregunta.respuestas
         )
     }
+
     ColocarBotones(text = "Comprobar", separacion = 60, navController, ruta = AppScreens.Resultado.ruta )
 
 }
